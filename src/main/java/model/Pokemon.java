@@ -24,15 +24,6 @@ public class Pokemon {
     public Pokemon() {
     }
 
-    public Pokemon(int nationalDex, int regionalDex, String name, double weight, double height, String description) {
-        this.nationalDex = nationalDex;
-        this.regionalDex = regionalDex;
-        this.name = name;
-        this.weight = weight;
-        this.height = height;
-        this.description = description;
-    }
-
     public Pokemon(int nationalDex, int regionalDex, String name, double weight, double height, String description, PkmType primaryType, PkmType secondaryType) {
         this.nationalDex = nationalDex;
         this.regionalDex = regionalDex;
