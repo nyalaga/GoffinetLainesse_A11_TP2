@@ -25,15 +25,13 @@ public class io {
             Object o = pokemons.get(i);
             JSONObject pokemonJson = ((JSONObject) o);
 
-            String sNationalDex = (String) pokemonJson.get("national_dex");
+            String sNationalDex = pokemonJson.get("national_dex").toString();
             int nationalDex = Integer.parseInt(sNationalDex);
-            String sRegionalDex = (String) pokemonJson.get("regional_dex");
+            String sRegionalDex = pokemonJson.get("regional_dex").toString();
             int regionalDex = Integer.parseInt(sRegionalDex);
             String name = (String) pokemonJson.get("name");
-            String sWeight = (String) pokemonJson.get("weight");
-            double weight = Double.parseDouble(sWeight);
-            String sHeight = (String) pokemonJson.get("height");
-            double height = Double.parseDouble(sHeight);
+            double weight = (double) pokemonJson.get("weight");
+            double height = (double) pokemonJson.get("height");
             String description = (String) pokemonJson.get("desc");
             JSONArray types = (JSONArray) pokemonJson.get("type");
             PkmType primaryType = null;
