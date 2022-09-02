@@ -7,7 +7,6 @@ import javax.persistence.Id;
 @Entity
 public class Pokemon {
 
-
     @Id
     @Column(name = "national_dex")
     private int nationalDex;
@@ -17,6 +16,10 @@ public class Pokemon {
     private double weight;
     private double height;
     private String description;
+    @Column(name = "primary_type")
+    private PkmType primaryType;
+    @Column(name = "secondary_type")
+    private PkmType secondaryType;
 
     public Pokemon() {
     }
@@ -28,6 +31,17 @@ public class Pokemon {
         this.weight = weight;
         this.height = height;
         this.description = description;
+    }
+
+    public Pokemon(int nationalDex, int regionalDex, String name, double weight, double height, String description, PkmType primaryType, PkmType secondaryType) {
+        this.nationalDex = nationalDex;
+        this.regionalDex = regionalDex;
+        this.name = name;
+        this.weight = weight;
+        this.height = height;
+        this.description = description;
+        this.primaryType = primaryType;
+        this.secondaryType = secondaryType;
     }
 
     public int getNationalDex() {
@@ -76,5 +90,21 @@ public class Pokemon {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public PkmType getPrimaryType() {
+        return primaryType;
+    }
+
+    public void setPrimaryType(PkmType primaryType) {
+        this.primaryType = primaryType;
+    }
+
+    public PkmType getSecondaryType() {
+        return secondaryType;
+    }
+
+    public void setSecondaryType(PkmType secondaryTYpe) {
+        this.secondaryType = secondaryTYpe;
     }
 }
