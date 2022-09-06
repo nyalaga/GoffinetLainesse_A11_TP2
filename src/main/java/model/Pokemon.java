@@ -24,6 +24,16 @@ public class Pokemon {
     public Pokemon() {
     }
 
+    public Pokemon(int nationalDex, int regionalDex, String name, double weight, double height, String description, PkmType primaryType) {
+        this.nationalDex = nationalDex;
+        this.regionalDex = regionalDex;
+        this.name = name;
+        this.weight = weight;
+        this.height = height;
+        this.description = description;
+        this.primaryType = primaryType;
+    }
+
     public Pokemon(int nationalDex, int regionalDex, String name, double weight, double height, String description, PkmType primaryType, PkmType secondaryType) {
         this.nationalDex = nationalDex;
         this.regionalDex = regionalDex;
@@ -97,5 +107,19 @@ public class Pokemon {
 
     public void setSecondaryType(PkmType secondaryTYpe) {
         this.secondaryType = secondaryTYpe;
+    }
+
+    @Override
+    public String toString() {
+        return "Pokemon{" +
+                "nationalDex=" + nationalDex +
+                ", regionalDex=" + regionalDex +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", description='" + description + '\'' +
+                ", primaryType=" + primaryType +
+                ", secondaryType=" + secondaryType +
+                '}';
     }
 }

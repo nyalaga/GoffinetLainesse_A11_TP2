@@ -21,6 +21,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="TP_GG_ML_2" />
+          <factory-entry name="hibernate" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

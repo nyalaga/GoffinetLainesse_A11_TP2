@@ -28,11 +28,12 @@ public class Servlet_Test extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PokemonDAO pokemonDAO = new PokemonDAO();
-//
-//        List<Pokemon> resultat = pokemonDAO.getByTypes(PkmType.GRASS);
+
+        //pokemonDAO.save(new Pokemon(000, 000, "TEST", 5.0, 0.5, "TEST", PkmType.DARK));
         List<Pokemon> resultat = pokemonDAO.getByWeight(5);
-//        List<Pokemon> resultat = pokemonDAO.getByHeight(0.7);
-        System.out.println(resultat);
+        System.out.println(resultat.get(0));
+        resultat = pokemonDAO.getByTypes(PkmType.DARK);
+        System.out.println(resultat.get(0));
 
     }
 
