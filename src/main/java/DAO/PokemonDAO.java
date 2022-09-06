@@ -18,21 +18,21 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
      */
     @Override
     public void save(Pokemon pokemon) {
-
-        EntityManager entityManager = null;
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
 
         try {
-            entityManager = entityManagerFactory.createEntityManager();
-            entityManager.getTransaction().begin();
+            transaction.begin();
             entityManager.persist(pokemon);
-            entityManager.getTransaction().commit();
-            entityManager.close();
+            transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
-            if(entityManager != null) {
-                entityManager.getTransaction().rollback();
-                entityManager.close();
+        } finally {
+            if(transaction.isActive()) {
+                transaction.rollback();
             }
+            entityManager.close();
+            entityManagerFactory.close();
         }
     }
 
@@ -43,77 +43,116 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
      */
     @Override
     public Pokemon findById(int id) {
-        EntityManager entityManager = null;
-        Pokemon pokemon = null;
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        Pokemon pokemon;
 
         try {
-            entityManager = entityManagerFactory.createEntityManager();
-            entityManager.getTransaction().begin();
+           transaction.begin();
             pokemon = entityManager.find(Pokemon.class, id);
-            entityManager.getTransaction().commit();
-            entityManager.close();
+            transaction.commit();
             return pokemon;
         } catch (Exception e) {
             e.printStackTrace();
-            if(entityManager != null) {
-                entityManager.getTransaction().rollback();
-                entityManager.close();
-            }
             return null;
+        } finally {
+            if(transaction.isActive()) {
+                transaction.rollback();
+            }
+            entityManager.close();
+            entityManagerFactory.close();
         }
     }
 
+    /**
+     * Obtenir la liste des Pokemons selon leur type
+     * @param type du Pokemon
+     * @return la liste des Pokemons ayant ce type
+     */
     @Override
     public List<Pokemon> getByTypes(PkmType type) {
-        EntityManager entityManager = null;
-        List<Pokemon> listPokemons = null;
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        List<Pokemon> listPokemons;
 
         try {
-            entityManager = entityManagerFactory.createEntityManager();
-            entityManager.getTransaction().begin();
-            String query = "SELECT p FROM pokemon p WHERE p.type = :pkmType";
-            TypedQuery<Pokemon> typedQuery = entityManager.createQuery(query, Pokemon.class);
-            typedQuery.setParameter("pkmType", type);
-            listPokemons = typedQuery.getResultList();
-            entityManager.close();
+            transaction.begin();
+            String query = "SELECT p FROM Pokemon p WHERE p.primaryType =:pkmType OR p.secondaryType =:pkmType";
+            TypedQuery<Pokemon> getByTypesQuery = entityManager.createQuery(query, Pokemon.class);
+            getByTypesQuery.setParameter("pkmType", type);
+            listPokemons = getByTypesQuery.getResultList();
+            transaction.commit();
             return listPokemons;
         } catch (Exception e) {
             e.printStackTrace();
-            if(entityManager != null) {
-                entityManager.getTransaction().rollback();
-                entityManager.close();
-            }
             return null;
+        } finally {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            entityManager.close();
+            entityManagerFactory.close();
         }
     }
 
+    /**
+     * Obtenir la liste des Pokemons selon un poids déterminé
+     * @param weight du Pokemon
+     * @return la liste des Pokemons ayant ce poids
+     */
     @Override
     public List<Pokemon> getByWeight(double weight) {
-        EntityManager entityManager = null;
-        List<Pokemon> listPokemons = null;
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        List<Pokemon> listPokemons;
 
         try {
-            entityManager = entityManagerFactory.createEntityManager();
-            entityManager.getTransaction().begin();
-            String query = "SELECT p FROM pokemon p WHERE p.weight = :pkmWeight";
-            Query q = entityManager.createNativeQuery(query, Pokemon.class);
-            q.setParameter("pkmWeight", weight);
-            listPokemons = q.getResultList();
-            entityManager.close();
+           transaction.begin();
+            String query = "SELECT p FROM Pokemon p WHERE p.weight =:weight";
+            TypedQuery<Pokemon> getByWeightQuery = entityManager.createQuery(query, Pokemon.class);
+            getByWeightQuery.setParameter("weight", weight);
+            listPokemons = getByWeightQuery.getResultList();
             return listPokemons;
         } catch (Exception e) {
             e.printStackTrace();
-            if(entityManager != null) {
-                entityManager.getTransaction().rollback();
-                entityManager.close();
-            }
             return null;
+        } finally {
+            if(transaction.isActive()) {
+                transaction.rollback();
+            }
+            entityManager.close();
+            entityManagerFactory.close();
         }
     }
 
+    /**
+     * Obtenir la liste des Pokemons selon une grandeur déterminée
+     * @param height du Pokemon
+     * @return la liste des Pokemons ayant cette taille
+     */
     @Override
     public List<Pokemon> getByHeight(double height) {
-        return null;
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        List<Pokemon> listPokemons;
+
+        try {
+            transaction.begin();
+            String query = "SELECT p FROM Pokemon p WHERE p.height =:height";
+            TypedQuery<Pokemon> getByHeightQuery = entityManager.createQuery(query, Pokemon.class);
+            getByHeightQuery.setParameter("height", height);
+            listPokemons = getByHeightQuery.getResultList();
+            return listPokemons;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if(transaction.isActive()) {
+                transaction.rollback();
+            }
+            entityManager.close();
+            entityManagerFactory.close();
+        }
     }
 
     /**
@@ -122,24 +161,25 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
      */
     @Override
     public List<Pokemon> getAllPokemons() {
-        EntityManager entityManager = null;
-        List<Pokemon> listPokemons = null;
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        List<Pokemon> listPokemons;
 
         try {
-            entityManager = entityManagerFactory.createEntityManager();
-            entityManager.getTransaction().begin();
-            String query = "SELECT * FROM pokemon";
-            Query q = entityManager.createNativeQuery(query, Pokemon.class);
-            listPokemons = q.getResultList();
-            entityManager.close();
+            transaction.begin();
+            String query = "SELECT p FROM Pokemon p";
+            TypedQuery<Pokemon> getAllPkmQuery = entityManager.createQuery(query, Pokemon.class);
+            listPokemons = getAllPkmQuery.getResultList();
             return listPokemons;
         } catch (Exception e) {
             e.printStackTrace();
-            if(entityManager != null) {
-                entityManager.getTransaction().rollback();
-                entityManager.close();
-            }
             return null;
+        } finally {
+            if(transaction.isActive()) {
+                transaction.rollback();
+            }
+            entityManager.close();
+            entityManagerFactory.close();
         }
     }
 }
