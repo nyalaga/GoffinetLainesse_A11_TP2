@@ -11,10 +11,11 @@
 </head>
 <body>
 <fmt:setBundle basename="Lang"/>
+<fmt:setLocale value="${sessionScope.Lang}"/>
 
 <div class="main-container">
     <%@include file="components/navigation_menu.jsp"%>
-    <h1 class="page-name">Welcome to the world of Pokemon</h1>
+    <h1 class="page-name"><fmt:message key="welcome"/></h1>
 </div>
 </body>
 <footer>
