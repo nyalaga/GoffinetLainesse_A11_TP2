@@ -76,13 +76,6 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
         List<Pokemon> listPokemons;
 
         try {
-            entityManager = entityManagerFactory.createEntityManager();
-            entityManager.getTransaction().begin();
-            String query = "SELECT p FROM Pokemon p WHERE p.primaryType = :pkmType OR p.secondaryType = :pkmType";
-            Query q = entityManager.createQuery(query, Pokemon.class);
-            q.setParameter("pkmType", type);
-            listPokemons = q.getResultList();
-            entityManager.close();
             transaction.begin();
             String query = "SELECT p FROM Pokemon p WHERE p.primaryType =:pkmType OR p.secondaryType =:pkmType";
             TypedQuery<Pokemon> getByTypesQuery = entityManager.createQuery(query, Pokemon.class);
@@ -114,15 +107,7 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
         List<Pokemon> listPokemons;
 
         try {
-            entityManager = entityManagerFactory.createEntityManager();
-            entityManager.getTransaction().begin();
-            String query = "SELECT p FROM Pokemon p WHERE p.weight = :pkmWeight";
-
-            Query q = entityManager.createQuery(query, Pokemon.class);
-            q.setParameter("pkmWeight", weight);
-            listPokemons = q.getResultList();
-            entityManager.close();
-           transaction.begin();
+            transaction.begin();
             String query = "SELECT p FROM Pokemon p WHERE p.weight =:weight";
             TypedQuery<Pokemon> getByWeightQuery = entityManager.createQuery(query, Pokemon.class);
             getByWeightQuery.setParameter("weight", weight);
