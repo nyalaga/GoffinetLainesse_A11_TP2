@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 @WebServlet(name = "Servlet_Test", value = "/Servlet_Test")
@@ -29,7 +30,17 @@ public class Servlet_Test extends HttpServlet {
             session.setAttribute("Lang", langChoice);
         }
 
-        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        // redirection sur la page courante
+        RequestDispatcher rd;
+        String referrer = request.getHeader("Referer");
+        if (referrer != null) {
+            URL ref = new URL(referrer);
+            referrer = ref.getPath().substring(request.getContextPath().length());
+            rd = request.getRequestDispatcher(referrer);
+        } else {
+            rd = request.getRequestDispatcher("/index.jsp");
+        }
+
         rd.forward(request, response);
 
     }

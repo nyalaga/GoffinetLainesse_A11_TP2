@@ -1,5 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-<link href="style/style.css" rel="stylesheet">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<fmt:setBundle basename="Lang"/>
+<fmt:setLocale value="${sessionScope.Lang}"/>
+
+<link href="css/style.css" rel="stylesheet">
 <div class="pokemonCard">
 	<div class="pokemonHeader">
 		<div class="pokemonImgPlace">

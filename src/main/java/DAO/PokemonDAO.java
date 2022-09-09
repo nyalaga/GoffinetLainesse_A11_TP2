@@ -11,7 +11,6 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
     static EntityManagerFactory entityManagerFactory =
             Persistence.createEntityManagerFactory("hibernate");
 
-
     /**
      * Sauvegarder un Pokemon dans la bd
      * @param pokemon l'objet Pokemon
