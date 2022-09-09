@@ -18,7 +18,7 @@ public class Servlet_Test extends HttpServlet {
 
 //    public void init() {
 //        try {
-//            String message = io.migrateJSONtoDB(getServletContext().getRealPath("pokedex.json"));
+//            String message = io.migrateJSONtoDB(getServletContext().getRealPath("resources/data/pokedex.json"));
 //            System.out.println(message);
 //        } catch (IOException | ParseException e) {
 //            e.printStackTrace();
