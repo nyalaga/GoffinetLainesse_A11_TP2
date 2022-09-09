@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,8 @@
     <title>Welcome to the world of Pokemon!</title>
 </head>
 <body>
+<fmt:setBundle basename="Lang"/>
+
 <div class="main-container">
     <%@include file="components/navigation_menu.jsp"%>
     <h1 class="page-name">Welcome to the world of Pokemon</h1>

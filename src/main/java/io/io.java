@@ -36,10 +36,10 @@ public class io {
             JSONArray types = (JSONArray) pokemonJson.get("type");
             PkmType primaryType = null;
             PkmType secondaryType = null;
-            if(types.size() >= 1) {
+            if (types.size() >= 1) {
                 Object type1 = types.get(0);
                 primaryType = getTypeAsEnum((String)type1);
-                if(types.size() >= 2) {
+                if (types.size() >= 2) {
                     Object type2 = types.get(1);
                     secondaryType = getTypeAsEnum((String) type2);
                 }

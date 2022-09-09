@@ -56,7 +56,7 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
             e.printStackTrace();
             return null;
         } finally {
-            if(transaction.isActive()) {
+            if (transaction.isActive()) {
                 transaction.rollback();
             }
             entityManager.close();
@@ -117,7 +117,7 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
             e.printStackTrace();
             return null;
         } finally {
-            if(transaction.isActive()) {
+            if (transaction.isActive()) {
                 transaction.rollback();
             }
             entityManager.close();
@@ -147,7 +147,7 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
             e.printStackTrace();
             return null;
         } finally {
-            if(transaction.isActive()) {
+            if (transaction.isActive()) {
                 transaction.rollback();
             }
             entityManager.close();
@@ -175,7 +175,7 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
             e.printStackTrace();
             return null;
         } finally {
-            if(transaction.isActive()) {
+            if (transaction.isActive()) {
                 transaction.rollback();
             }
             entityManager.close();
