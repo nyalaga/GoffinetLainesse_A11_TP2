@@ -42,7 +42,6 @@ public class Servlet_Test extends HttpServlet {
         }
 
         rd.forward(request, response);
-
     }
 
     @Override
