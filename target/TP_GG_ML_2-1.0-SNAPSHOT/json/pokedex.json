@@ -1,7 +1,7 @@
 {
   "pokedex": [
     {
-      "national_dex": 810,
+      "national_dex": 80,
       "regional_dex": 1,
       "name": "Grookey",
       "weight": 5.0,
@@ -14,7 +14,7 @@
       "shiny_img": "/fake_shiny_url.html"
     },
     {
-      "national_dex": 811,
+      "national_dex": 81,
       "regional_dex": 2,
       "name": "Thwackey",
       "weight": 14.0,

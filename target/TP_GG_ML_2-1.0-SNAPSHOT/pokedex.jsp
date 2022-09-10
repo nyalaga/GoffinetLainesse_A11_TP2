@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,52 +19,45 @@
 <div class="main-container">
 	<%@include file="components/navigation_menu.jsp"%>
 	<h1 class="page-name"><fmt:message key="title.pokedex"/></h1>
+
 	<div class="pokedex">
 		<div class="pokedex-row">
-			<div class="pokedex-card">
-				<div class="pokedex-card-inner">
-					<div class="pokedex-card-front">
-						<h1>Hello</h1>
-					</div>
-					<div class="pokedex-card-back">
-						<h1>💩</h1>
-					</div>
-				</div>
-			</div>
-			<div class="pokedex-card">
-				<div class="pokedex-card-inner">
-					<div class="pokedex-card-front">
-						<h1>World</h1>
-					</div>
-					<div class="pokedex-card-back">
-						<h1>💩</h1>
-					</div>
-				</div>
-			</div>
-			<div class="pokedex-card">
-				<div class="pokedex-card-inner">
-					<div class="pokedex-card-front">
-						<h1>!!!</h1>
-					</div>
-					<div class="pokedex-card-back">
-						<h1>💩</h1>
-					</div>
-				</div>
-			</div>
-			<div class="pokedex-card">
-				<div class="pokedex-card-inner">
-					<div class="pokedex-card-front">
-						<h1>🚀</h1>
-					</div>
-					<div class="pokedex-card-back">
-						<h1>💩</h1>
+			<c:forEach var="pkm" items="${requestScope.pkmList}">
+				<div class="pokedex-card">
+					<div class="pokedex-card-inner">
+						<div class="pokedex-card-front">
+							<div>
+								<div class="container">
+									<div class="container-fluid">
+										<div><img src="resources/img/pkm/${pkm.nationalDex}.png" class="img-fluid"
+												  alt="Image Pokemon ${pkm.nationalDex}"></div>
+									</div>
+									<div class="h6">
+										<div>Name: ${pkm.name}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pokedex-card-back">
+							<div class="container">
+								<div>
+									<div>National index: ${pkm.nationalDex}</div>
+									<div>Régional index: ${pkm.regionalDex}</div>
+									<div>Name: ${pkm.name}</div>
+									<div>Weight: ${pkm.weight}</div>
+									<div>Height: ${pkm.height}</div>
+									<div>Description: ${pkm.description}</div>
+									<div>Primary type: ${pkm.primaryType}</div>
+									<div>Secondary type: ${pkm.secondaryType}</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 </div>
-</body>
 <footer>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
