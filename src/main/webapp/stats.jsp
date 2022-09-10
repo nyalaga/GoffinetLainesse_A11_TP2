@@ -1,9 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<fmt:setBundle basename="Lang"/>
-<fmt:setLocale value="${sessionScope.Lang}"/>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +12,12 @@
 	<title>Title</title>
 </head>
 <body>
+<fmt:setBundle basename="Lang"/>
+<fmt:setLocale value="${sessionScope.Lang}"/>
+
 <div class="main-container">
 	<%@include file="components/navigation_menu.jsp"%>
-	<h1 class="page-name">Pokedex Stats</h1>
+	<h1 class="page-name"><fmt:message key="title.stat"/></h1>
 </div>
 </body>
 <footer>

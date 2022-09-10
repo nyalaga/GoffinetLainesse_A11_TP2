@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<fmt:setBundle basename="Lang"/>
-<fmt:setLocale value="${sessionScope.Lang}"/>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +14,13 @@
 	<title>Pokedex</title>
 </head>
 <body>
+
+<fmt:setBundle basename="Lang"/>
+<fmt:setLocale value="${sessionScope.Lang}"/>
+
 <div class="main-container">
 	<%@include file="components/navigation_menu.jsp"%>
-	<h1 class="page-name">Pokedex</h1>
+	<h1 class="page-name"><fmt:message key="title.pokedex"/></h1>
 	<div class="pokedex">
 		<div class="pokedex-row">
 			<div class="pokedex-card">
