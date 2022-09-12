@@ -35,6 +35,7 @@ h1 {
     background-color: #fd1c1d;
     max-width: 800px;
     width: 95%;
+    flex-wrap: wrap;
 }
 
 .page-name {
@@ -49,6 +50,8 @@ h1 {
     color: black;
     font-size: large;
     white-space: nowrap;
+    font-max-size: large;
+    font-min-size: small;
 }
 
 .btn-menu:hover {

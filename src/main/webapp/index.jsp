@@ -7,12 +7,11 @@
     <meta name="viewport" content="width=500px, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>Welcome to the world of Pokemon!</title>
+    <fmt:setBundle basename="Lang"/>
+    <fmt:setLocale value="${sessionScope.Lang}"/>
+    <title><fmt:message key="welcome"/></title>
 </head>
 <body>
-<fmt:setBundle basename="Lang"/>
-<fmt:setLocale value="${sessionScope.Lang}"/>
-
 <div class="main-container">
     <%@include file="components/navigation_menu.jsp"%>
     <h1 class="page-name"><fmt:message key="welcome"/></h1>
