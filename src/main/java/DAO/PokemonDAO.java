@@ -4,6 +4,7 @@ import model.PkmType;
 import model.Pokemon;
 
 import javax.persistence.*;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class PokemonDAO implements ItemsDAO<Pokemon> {
@@ -31,7 +32,6 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
                 transaction.rollback();
             }
             entityManager.close();
-            entityManagerFactory.close();
         }
     }
 
@@ -59,7 +59,36 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
                 transaction.rollback();
             }
             entityManager.close();
-            entityManagerFactory.close();
+        }
+    }
+
+    /**
+     * Trouver les Pokemons dans la BD selon son nom ou une partie de son nom
+     * @param partialName suite de caractères évoquant un nom ou une partie du nom d'un Pokemon
+     * @return la liste des Pokemons qui contiennent cette suite de caractères
+     */
+    @Override
+    public List<Pokemon> findByPartialName(String partialName) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        List<Pokemon> listPokemons;
+
+        try {
+            transaction.begin();
+            String query = "SELECT p FROM Pokemon p WHERE UPPER(p.name) LIKE UPPER(CONCAT('%', :string,'%'))";
+            TypedQuery<Pokemon> findByPartialNameQuery = entityManager.createQuery(query, Pokemon.class);
+            findByPartialNameQuery.setParameter("string", partialName);
+            listPokemons = findByPartialNameQuery.getResultList();
+            transaction.commit();
+            return listPokemons;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            entityManager.close();
         }
     }
 
@@ -90,7 +119,6 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
                 transaction.rollback();
             }
             entityManager.close();
-            entityManagerFactory.close();
         }
     }
 
@@ -120,7 +148,6 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
                 transaction.rollback();
             }
             entityManager.close();
-            entityManagerFactory.close();
         }
     }
 
@@ -150,7 +177,6 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
                 transaction.rollback();
             }
             entityManager.close();
-            entityManagerFactory.close();
         }
     }
 
@@ -178,7 +204,6 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
                 transaction.rollback();
             }
             entityManager.close();
-            entityManagerFactory.close();
         }
     }
 }

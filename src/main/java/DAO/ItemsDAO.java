@@ -11,6 +11,8 @@ public interface ItemsDAO<T> {
 
     T findById(int id);
 
+    List<T> findByPartialName(String PartialName);
+
     List<T> getByTypes(PkmType type);
 
     List<T> getByWeight(double weight);

@@ -20,27 +20,32 @@
 	<%@include file="components/navigation_menu.jsp"%>
 	<h1 class="page-name"><fmt:message key="title.pokedex"/></h1>
 
+	<div>
+		<form action="Servlet_Search">
+			<label for="partialName">Find by name :</label>
+			<input type="text" id="partialName" name="partialName">
+			<input type="submit" value="Search">
+		</form>
+	</div>
 	<div class="pokedex">
 		<div class="pokedex-row">
 			<c:forEach var="pkm" items="${requestScope.pkmList}">
 				<div class="pokedex-card">
 					<div class="pokedex-card-inner">
 						<div class="pokedex-card-front">
-							<div>
-								<div class="container">
-									<div class="container-fluid">
-										<div><img src="resources/img/pkm/${pkm.nationalDex}.png" class="img-fluid"
-												  alt="Image Pokemon ${pkm.nationalDex}"></div>
-									</div>
-									<div class="h6">
-										<div>Name: ${pkm.name}</div>
-									</div>
-								</div>
-							</div>
+                            <div class="container">
+                                <div class="container-fluid">
+                                    <div><img src="resources/img/pkm/${pkm.nationalDex}.png" class="img-fluid"
+                                              alt="Image Pokemon ${pkm.nationalDex}"></div>
+                                </div>
+                                <div class="h6">
+                                    <div>Name: ${pkm.name}</div>
+                                </div>
+                            </div>
 						</div>
 						<div class="pokedex-card-back">
 							<div class="container">
-								<div>
+								<div class="h6">
 									<div>National index: ${pkm.nationalDex}</div>
 									<div>Régional index: ${pkm.regionalDex}</div>
 									<div>Name: ${pkm.name}</div>
