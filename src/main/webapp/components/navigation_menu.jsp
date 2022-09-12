@@ -3,7 +3,7 @@
 <fmt:setBundle basename="Lang"/>
 <fmt:setLocale value="${sessionScope.Lang}"/>
 
-<form action="Servlet_in18" method="get">
+<form action="Servlet_i18n" method="get">
 	<div class="btn-group" role="group" aria-label="Basic example">
 		<button type="submit" class="btn btn-outline-danger btn-menu" value="en_US" name="Lang"><fmt:message key="choice.english"/></button>
 		<button type="submit" class="btn btn-outline-danger btn-menu" value="fr_CA" name="Lang"><fmt:message key="choice.french"/></button>

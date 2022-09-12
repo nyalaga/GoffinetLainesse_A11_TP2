@@ -1,28 +1,47 @@
 package Control;
 
 import DAO.PokemonDAO;
+import model.PkmType;
 import model.Pokemon;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @WebServlet(name = "Servlet_filters", value = "/Servlet_filters")
 public class Servlet_filters extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String dest = "";
-        String partialName = request.getParameter("partialName");
-        // aller chercher la liste de paramètres
-        // si nom Paramètre → switch case
-        // !!! un paramètre à la fois?
+        String dest;
+
         PokemonDAO pokemonDAO = new PokemonDAO();
-        List<Pokemon> pkmList = pokemonDAO.findByPartialName(partialName);
+        List<Pokemon> pkmList = null;
+        List<String> parameterNames = new ArrayList<>(request.getParameterMap().keySet());
+
+        for (String param: parameterNames) {
+            switch(param) {
+                case "partialName":
+                    String partialName = request.getParameter("partialName");
+                    pkmList = pokemonDAO.findByPartialName(partialName);
+                    break;
+                case "typeChoice":
+                    PkmType type = PkmType.valueOf(request.getParameter("typeChoice").toUpperCase(Locale.ROOT));
+                    pkmList = pokemonDAO.getByType(type);
+                    break;
+                case "heightChoice":
+                    double height = Double.parseDouble(request.getParameter("heightChoice"));
+                    pkmList = pokemonDAO.getByHeight(height);
+                    break;
+            }
+        }
+
         request.setAttribute("pkmList", pkmList);
 
-        if(pkmList.isEmpty()) {
+        if(pkmList == null || pkmList.isEmpty()) {
             dest = "/404.html";
         } else {
             dest = "/pokemonsFound.jsp";

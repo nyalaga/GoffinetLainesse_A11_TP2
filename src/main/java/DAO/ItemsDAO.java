@@ -3,7 +3,6 @@ package DAO;
 import model.PkmType;
 
 import java.util.List;
-import java.util.Set;
 
 public interface ItemsDAO<T> {
 
@@ -13,7 +12,7 @@ public interface ItemsDAO<T> {
 
     List<T> findByPartialName(String PartialName);
 
-    List<T> getByTypes(PkmType type);
+    List<T> getByType(PkmType type);
 
     List<T> getByWeight(double weight);
 

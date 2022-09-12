@@ -21,12 +21,49 @@
 	<h1 class="page-name"><fmt:message key="title.pokedex"/></h1>
 
 	<div>
-		<form action="Servlet_filters">
+		<form action="Servlet_filters" method="get">
 			<label for="partialName">Find by name :</label>
 			<input type="text" id="partialName" name="partialName">
 			<input type="submit" value="Search">
 		</form>
 	</div>
+
+	<div>
+		<form action="Servlet_filters" method="get">
+			<label for="typeChoice">Search by type :</label>
+			<select id="typeChoice" name="typeChoice" onchange="this.form.submit()">
+				<option selected disabled>type</option>
+				<option value="normal">normal</option>
+				<option value="fire">fire</option>
+				<option value="water">water</option>
+				<option value="grass">grass</option>
+				<option value="electric">electric</option>
+				<option value="ice">ice</option>
+				<option value="fighting">fighting</option>
+				<option value="poison">poison</option>
+				<option value="ground">ground</option>
+				<option value="flying">flying</option>
+				<option value="psychic">psychic</option>
+				<option value="bug">bug</option>
+				<option value="rock">rock</option>
+				<option value="ghost">ghost</option>
+				<option value="dark">dark</option>
+				<option value="dragon">dragon</option>
+				<option value="steel">steel</option>
+				<option value="fairy">fairy</option>
+			</select>
+		</form>
+	</div>
+
+	<div>
+		<form action="Servlet_filters" method="get">
+			<label for="heightChoice">Search by height :</label>
+			<input type="range" id="heightChoice" name="heightChoice" value="16" min="0" max="15" oninput="this.nextElementSibling.value">
+			<span id="heightValue"></span>
+			<input type="submit" value="Search">
+		</form>
+	</div>
+
 	<div class="pokedex">
 		<div class="pokedex-row">
 			<c:forEach var="pkm" items="${requestScope.pkmList}">

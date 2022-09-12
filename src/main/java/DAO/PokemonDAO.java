@@ -98,7 +98,7 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
      * @return la liste des Pokemons ayant ce type
      */
     @Override
-    public List<Pokemon> getByTypes(PkmType type) {
+    public List<Pokemon> getByType(PkmType type) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         List<Pokemon> listPokemons;
@@ -164,7 +164,7 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
 
         try {
             transaction.begin();
-            String query = "SELECT p FROM Pokemon p WHERE p.height =:height";
+            String query = "SELECT p FROM Pokemon p WHERE p.height >= :height AND p.height < :height + 1";
             TypedQuery<Pokemon> getByHeightQuery = entityManager.createQuery(query, Pokemon.class);
             getByHeightQuery.setParameter("height", height);
             listPokemons = getByHeightQuery.getResultList();

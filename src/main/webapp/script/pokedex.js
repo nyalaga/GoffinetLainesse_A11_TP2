@@ -16,3 +16,11 @@ for (const card of pokedexCards) {
         c.classList.add("animatePokedexCardShrink");
     })
 }
+
+var heightSlider = document.getElementById("heightChoice");
+var output = document.getElementById("heightValue");
+output.innerHTML = heightSlider.value;
+
+heightSlider.oninput = function() {
+    output.innerHTML = this.value;
+}
