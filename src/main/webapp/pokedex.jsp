@@ -58,8 +58,27 @@
 	<div>
 		<form action="Servlet_filters" method="get">
 			<label for="heightChoice">Search by height :</label>
-			<input type="range" id="heightChoice" name="heightChoice" value="16" min="0" max="15" oninput="this.nextElementSibling.value">
-			<span id="heightValue"></span>
+			<input type="button" value="-" onclick="subtract_one_m()">
+			<input type="range" id="heightChoice" name="heightChoice" min="0" max="15" oninput="this.nextElementSibling.value">
+			<span>
+				<span id="heightValue"></span>
+				<span> m </span>
+			</span>
+			<input type="button" value="+" onclick="add_one_m()">
+			<input type="submit" value="Search">
+		</form>
+	</div>
+
+	<div>
+		<form action="Servlet_filters" method="get">
+			<label for="weightChoice">Search by height :</label>
+			<input type="button" value="-" onclick="subtract_one_kg()">
+			<input type="range" id="weightChoice" name="weightChoice" min="0" max="1400" oninput="this.nextElementSibling.value">
+			<span>
+				<span id="weightValue"></span>
+				<span> kg </span>
+			</span>
+			<input type="button" value="+" onclick="add_one_kg()">
 			<input type="submit" value="Search">
 		</form>
 	</div>

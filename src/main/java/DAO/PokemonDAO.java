@@ -135,7 +135,7 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
 
         try {
             transaction.begin();
-            String query = "SELECT p FROM Pokemon p WHERE p.weight =:weight";
+            String query = "SELECT p FROM Pokemon p WHERE p.weight >= :weight AND p.weight < :weight + 1";
             TypedQuery<Pokemon> getByWeightQuery = entityManager.createQuery(query, Pokemon.class);
             getByWeightQuery.setParameter("weight", weight);
             listPokemons = getByWeightQuery.getResultList();

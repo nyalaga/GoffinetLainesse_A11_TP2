@@ -36,6 +36,10 @@ public class Servlet_filters extends HttpServlet {
                     double height = Double.parseDouble(request.getParameter("heightChoice"));
                     pkmList = pokemonDAO.getByHeight(height);
                     break;
+                case "weightChoice":
+                    double weight = Double.parseDouble(request.getParameter("weightChoice"));
+                    pkmList = pokemonDAO.getByWeight(weight);
+                    break;
             }
         }
 
