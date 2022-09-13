@@ -87,16 +87,20 @@
 		<div class="pokedex-row">
 			<c:forEach var="pkm" items="${requestScope.pkmList}">
 				<div class="pokedex-card">
-					<div class="pokedex-card-inner">
+					<div class="pokedex-card-inner text-white">
 						<div class="pokedex-card-front">
-                            <div class="container">
+                            <div class="container m-2">
                                 <div class="container-fluid">
                                     <div><img src="resources/img/pkm/${pkm.nationalDex}.png" class="img-fluid"
                                               alt="Image Pokemon ${pkm.nationalDex}"></div>
                                 </div>
-                                <div class="h6">
-                                    <div>Name: ${pkm.name}</div>
+                                <div class="h5">
+                                    ${pkm.name}
                                 </div>
+								<div>
+									<div class="badge rounded-pill ${pkm.primaryType}Color">${pkm.primaryType}</div>
+									<div class="badge rounded-pill ${pkm.secondaryType}Color">${pkm.secondaryType}</div>
+								</div>
                             </div>
 						</div>
 						<div class="pokedex-card-back">
@@ -108,8 +112,7 @@
 									<div>Weight: ${pkm.weight}</div>
 									<div>Height: ${pkm.height}</div>
 									<div>Description: ${pkm.description}</div>
-									<div>Primary type: ${pkm.primaryType}</div>
-									<div>Secondary type: ${pkm.secondaryType}</div>
+
 								</div>
 							</div>
 						</div>

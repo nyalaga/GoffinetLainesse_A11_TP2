@@ -1,3 +1,75 @@
+.NORMALColor{
+    background-color: #929ba3;
+}
+
+.FIREColor {
+    background-color: #ff9e54;
+}
+
+.WATERColor {
+    background-color: #4f91d7;
+}
+
+.GRASSColor {
+    background-color: #63bd5a;
+}
+
+.ELECTRICColor {
+    background-color: #f4d339;
+}
+
+.ICEColor {
+    background-color: #74cfc1;
+}
+
+.FIGHTINGColor {
+    background-color: #cf3f6b;
+}
+
+.POISONColor {
+    background-color: #ac6bc9;
+}
+
+.GROUNDColor {
+    background-color: #da7943;
+}
+
+.FLYINGColor {
+    background-color: #90abdf;
+}
+
+.PSYCHICColor {
+    background-color: #fa727a;
+}
+
+.BUGColor {
+    background-color: #92c22b;
+}
+
+.ROCKColor {
+    background-color: #c6b88d;
+}
+
+.GHOSTColor {
+    background-color: #5169ae;
+}
+
+.DARKColor {
+    background-color: #5a5365;
+}
+
+.DRAGONColor {
+    background-color: #036dc4;
+}
+
+.STEELColor {
+    background-color: #5a8fa3;
+}
+
+.FAIRYColor {
+    background-color: #ed90e7;
+}
+
 body {
     background-color: #ffffff;
     font-family: "Montserrat Light", serif;
@@ -66,3 +138,4 @@ h1 {
     border: 3px solid white;
     pointer-events: none;
 }
+
