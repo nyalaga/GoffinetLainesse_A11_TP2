@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,120 +22,73 @@
 
 	<div>
 		<form action="Servlet_filters" method="get">
-			<label for="partialName">Find by name :</label>
+			<label for="partialName">Find by name </label>
 			<input type="text" id="partialName" name="partialName">
-			<input type="submit" value="Search">
+			<input class="btn btn-outline-dark btn-sm" type="submit" value="Search">
 		</form>
 	</div>
 
 	<div>
 		<form action="Servlet_filters" method="get">
-			<label for="typeChoice">Search by type :</label>
-			<select id="typeChoice" name="typeChoice" onchange="this.form.submit()">
+			<label for="typeChoice">Search by type </label>
+			<select class="btn btn-outline-dark" id="typeChoice" name="typeChoice" onchange="this.form.submit()">
 				<option selected disabled>type</option>
-				<option value="normal">normal</option>
-				<option value="fire">fire</option>
-				<option value="water">water</option>
-				<option value="grass">grass</option>
-				<option value="electric">electric</option>
-				<option value="ice">ice</option>
-				<option value="fighting">fighting</option>
-				<option value="poison">poison</option>
-				<option value="ground">ground</option>
-				<option value="flying">flying</option>
-				<option value="psychic">psychic</option>
-				<option value="bug">bug</option>
-				<option value="rock">rock</option>
-				<option value="ghost">ghost</option>
-				<option value="dark">dark</option>
-				<option value="dragon">dragon</option>
-				<option value="steel">steel</option>
-				<option value="fairy">fairy</option>
+				<option class="NORMALColor" value="normal">normal</option>
+				<option class="FIREColor" value="fire">fire</option>
+				<option class="WATERColor" value="water">water</option>
+				<option class="GRASSColor" value="grass">grass</option>
+				<option class="ELECTRICColor" value="electric">electric</option>
+				<option class="ICEColor" value="ice">ice</option>
+				<option class="FIGHTINGColor" value="fighting">fighting</option>
+				<option class="POISONColor" value="poison">poison</option>
+				<option class="GROUNDColor" value="ground">ground</option>
+				<option class="FLYINGColor" value="flying">flying</option>
+				<option class="PSYCHICColor" value="psychic">psychic</option>
+				<option class="BUGColor" value="bug">bug</option>
+				<option class="ROCKColor" value="rock">rock</option>
+				<option class="GHOSTColor" value="ghost">ghost</option>
+				<option class="DARKColor" value="dark">dark</option>
+				<option class="DRAGONColor" value="dragon">dragon</option>
+				<option class="STEELColor" value="steel">steel</option>
+				<option class="FAIRYColor" value="fairy">fairy</option>
 			</select>
 		</form>
 	</div>
 
 	<div>
 		<form action="Servlet_filters" method="get">
-			<label for="heightChoice">Search by height :</label>
-			<input type="button" value="-" onclick="subtract_one_m()">
+			<label for="heightChoice">Search by height </label>
+			<input class="btn btn-dark btn-sm" type="button" value="-" onclick="subtract_one_m()">
 			<input type="range" id="heightChoice" name="heightChoice" min="0" max="15" oninput="this.nextElementSibling.value">
 			<span>
 				<span id="heightValue"></span>
 				<span> m </span>
 			</span>
-			<input type="button" value="+" onclick="add_one_m()">
-			<input type="submit" value="Search">
+			<input class="btn btn-dark btn-sm" type="button" value="+" onclick="add_one_m()">
+			<input class="btn btn-outline-dark btn-sm" type="submit" value="Search">
 		</form>
 	</div>
 
 	<div>
 		<form action="Servlet_filters" method="get">
-			<label for="weightChoice">Search by height :</label>
-			<input type="button" value="-" onclick="subtract_one_kg()">
+			<label for="weightChoice">Search by weight </label>
+			<input class="btn btn-dark btn-sm" type="button" value="-" onclick="subtract_one_kg()">
 			<input type="range" id="weightChoice" name="weightChoice" min="0" max="1400" oninput="this.nextElementSibling.value">
 			<span>
 				<span id="weightValue"></span>
 				<span> kg </span>
 			</span>
-			<input type="button" value="+" onclick="add_one_kg()">
-			<input type="submit" value="Search">
+			<input class="btn btn-dark btn-sm" type="button" value="+" onclick="add_one_kg()">
+			<input class="btn btn-outline-dark btn-sm" type="submit" value="Search">
 		</form>
 	</div>
 
-	<div class="pokedex">
-		<div class="pokedex-row">
-			<c:forEach var="pkm" items="${requestScope.pkmList}">
-				<div class="pokedex-card">
-					<div class="pokedex-card-inner text-white">
-						<div class="pokedex-card-front">
-                            <div class="container">
-                                <div class="container-fluid mt-2">
-                                    <div><img src="resources/img/pkm/${pkm.nationalDex}.png" class="img-fluid"
-                                              alt="Image Pokemon ${pkm.nationalDex}"></div>
-                                </div>
-                                <div class="h5">
-                                    ${pkm.name}
-                                </div>
-								<div>
-									<span class="badge rounded-pill ${pkm.primaryType}Color">${pkm.primaryType}</span>
-									<span class="badge rounded-pill ${pkm.secondaryType}Color">${pkm.secondaryType}</span>
-								</div>
-                            </div>
-						</div>
-						<div class="pokedex-card-back">
-							<div class="container p-2">
-								<div class="h5 fw-bold text-dark">${pkm.name}</div>
-								<div class="h6 text-start">
-									<div>
-										<span>National index : </span>
-										<span class="fw-bold text-dark">${pkm.nationalDex}</span>
-									</div>
-									<div>
-										<span>Régional index: </span>
-										<span class="fw-bold text-dark">${pkm.regionalDex}</span>
-									</div>
-									<div class="mt-2">
-										<span>Weight : </span>
-										<span class="fw-bold text-dark">${pkm.weight} kg</span>
-									</div>
-									<div>
-										<span>Height : </span>
-										<span class="fw-bold text-dark">${pkm.height} m</span>
-									</div>
-									<div class="mt-2">
-										<span>Description: </span>
-										<span class="fst-italic text-dark">${pkm.description}</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</c:forEach>
-		</div>
+	<div>
+		<%@include file="components/pokedex_card.jsp"%>
 	</div>
+
 </div>
+
 <footer>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
