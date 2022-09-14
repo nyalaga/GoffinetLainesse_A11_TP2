@@ -1,20 +1,20 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
-<html lang="en">
+<fmt:setBundle basename="Lang"/>
+<fmt:setLocale value="${sessionScope.Lang}"/>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=500px, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <fmt:setBundle basename="Lang"/>
-    <fmt:setLocale value="${sessionScope.Lang}"/>
-    <title><fmt:message key="welcome"/></title>
+    <title>${welcome}</title>
 </head>
 <body>
+<fmt:message key="welcome" var="welcome"/>
 <div class="main-container">
     <%@include file="components/navigation_menu.jsp"%>
-    <h1 class="page-name"><fmt:message key="welcome"/></h1>
+    <h1 class="page-name">${welcome}</h1>
 </div>
 <div class="main-container">
     <img src="resources/img/Pokemons.png" class="rounded-3 img-fluid" alt="Image d'accueil">
