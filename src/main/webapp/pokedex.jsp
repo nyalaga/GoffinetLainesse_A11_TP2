@@ -89,8 +89,8 @@
 				<div class="pokedex-card">
 					<div class="pokedex-card-inner text-white">
 						<div class="pokedex-card-front">
-                            <div class="container m-2">
-                                <div class="container-fluid">
+                            <div class="container">
+                                <div class="container-fluid mt-2">
                                     <div><img src="resources/img/pkm/${pkm.nationalDex}.png" class="img-fluid"
                                               alt="Image Pokemon ${pkm.nationalDex}"></div>
                                 </div>
@@ -98,21 +98,35 @@
                                     ${pkm.name}
                                 </div>
 								<div>
-									<div class="badge rounded-pill ${pkm.primaryType}Color">${pkm.primaryType}</div>
-									<div class="badge rounded-pill ${pkm.secondaryType}Color">${pkm.secondaryType}</div>
+									<span class="badge rounded-pill ${pkm.primaryType}Color">${pkm.primaryType}</span>
+									<span class="badge rounded-pill ${pkm.secondaryType}Color">${pkm.secondaryType}</span>
 								</div>
                             </div>
 						</div>
 						<div class="pokedex-card-back">
-							<div class="container">
-								<div class="h6">
-									<div>National index: ${pkm.nationalDex}</div>
-									<div>Régional index: ${pkm.regionalDex}</div>
-									<div>Name: ${pkm.name}</div>
-									<div>Weight: ${pkm.weight}</div>
-									<div>Height: ${pkm.height}</div>
-									<div>Description: ${pkm.description}</div>
-
+							<div class="container p-2">
+								<div class="h5 fw-bold text-dark">${pkm.name}</div>
+								<div class="h6 text-start">
+									<div>
+										<span>National index : </span>
+										<span class="fw-bold text-dark">${pkm.nationalDex}</span>
+									</div>
+									<div>
+										<span>Régional index: </span>
+										<span class="fw-bold text-dark">${pkm.regionalDex}</span>
+									</div>
+									<div class="mt-2">
+										<span>Weight : </span>
+										<span class="fw-bold text-dark">${pkm.weight} kg</span>
+									</div>
+									<div>
+										<span>Height : </span>
+										<span class="fw-bold text-dark">${pkm.height} m</span>
+									</div>
+									<div class="mt-2">
+										<span>Description: </span>
+										<span class="fst-italic text-dark">${pkm.description}</span>
+									</div>
 								</div>
 							</div>
 						</div>
