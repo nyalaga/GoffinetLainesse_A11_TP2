@@ -1,7 +1,7 @@
 {
   "pokedex": [
     {
-      "national_dex": 80,
+      "national_dex": 810,
       "regional_dex": 1,
       "name": "Grookey",
       "weight": 5.0,
@@ -10,11 +10,11 @@
         "Grass"
       ],
       "desc": "It attacks with rapid beats of its stick. As it strikes with amazing speed, it gets more and more pumped.",
-      "std_img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/810.png",
-      "shiny_img": "/fake_shiny_url.html"
+      "std_img": "https://www.serebii.net/swordshield/pokemon/810.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/810.png"
     },
     {
-      "national_dex": 81,
+      "national_dex": 811,
       "regional_dex": 2,
       "name": "Thwackey",
       "weight": 14.0,
@@ -25,6 +25,380 @@
       "desc": "When it is drumming out rapid beats in battle, it gets so caught up in the rhythm that it won't even notice that it's already knocked out its opponent.",
       "std_img": "/fake_std_url.html",
       "shiny_img": "/fake_shiny_url.html"
+    },
+	{
+      "national_dex": 812,
+      "regional_dex": 3,
+      "name": "Rillaboom",
+      "weight": 90.0,
+      "height": 2.1,
+      "type": [
+        "Grass"
+      ],
+      "desc": "The one with the best drumming techniques becomes the boss of the troop. It has a gentle disposition and values harmony among its group.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/812.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/812.png"
+    },
+	{
+      "national_dex": 813,
+      "regional_dex": 4,
+      "name": "Scorbunny",
+      "weight": 4.5,
+      "height": 0.3,
+      "type": [
+        "Fire"
+      ],
+      "desc": "It has special pads on the backs of its feet, and one on its nose. Once it's raring to fight, these pads radiate tremendous heat.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/813.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/813.png"
+    },
+	{
+      "national_dex": 814,
+      "regional_dex": 5,
+      "name": "Raboot",
+      "weight": 9.0,
+      "height": 0.6,
+      "type": [
+        "Fire"
+      ],
+      "desc": "It kicks berries right off the branches of trees and then juggles them with its feet, practicing its footwork.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/814.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/814.png"
+    },
+	{
+      "national_dex": 815,
+      "regional_dex": 6,
+      "name": "Cinderace",
+      "weight": 33.0,
+      "height": 1.4,
+      "type": [
+        "Fire"
+      ],
+      "desc": "It juggles a pebble with its feet, turning it into a burning soccer ball. Its shots strike opponents hard and leave them scorched.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/815.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/815.png"
+    },
+	{
+      "national_dex": 816,
+      "regional_dex": 7,
+      "name": "Sobble",
+      "weight": 4.0,
+      "height": 0.3,
+      "type": [
+        "Water"
+      ],
+      "desc": "When scared, this Pokémon cries. Its tears pack the chemical punch of 100 onions, and attackers won't be able to resist weeping.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/816.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/816.png"
+    },
+	{
+      "national_dex": 817,
+      "regional_dex": 8,
+      "name": "Drizzile",
+      "weight": 11.5,
+      "height": 0.7,
+      "type": [
+        "Water"
+      ],
+      "desc": "Highly intelligent but also very lazy, it keeps enemies out of its territory by laying traps everywhere.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/817.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/817.png"
+    },
+	{
+      "national_dex": 818,
+      "regional_dex": 9,
+      "name": "Inteleon",
+      "weight": 45.2,
+      "height": 1.9,
+      "type": [
+        "Water"
+      ],
+      "desc": "It has many hidden capabilities, such as fingertips that can shoot water and a membrane on its back that it can use to glide through the air.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/818.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/818.png"
+    },
+	{
+      "national_dex": 819,
+      "regional_dex": 24,
+      "name": "Skwovet",
+      "weight": 2.5,
+      "height": 0.3,
+      "type": [
+        "Normal"
+      ],
+      "desc": "Found throughout the Galar region, this Pokémon becomes uneasy if its cheeks are ever completely empty of berries.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/819.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/819.png"
+    },
+	{
+      "national_dex": 820,
+      "regional_dex": 25,
+      "name": "Greedent",
+      "weight": 6.0,
+      "height": 0.6,
+      "type": [
+        "Normal"
+      ],
+      "desc": "Common throughout the Galar region, this Pokémon has strong teeth and can chew through the toughest of berry shells.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/820.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/820.png"
+    },
+	{
+      "national_dex": 821,
+      "regional_dex": 21,
+      "name": "Rookidee",
+      "weight": 1.8,
+      "height": 0.2,
+      "type": [
+        "Flying"
+      ],
+      "desc": "It will bravely challenge any opponent, no matter how powerful. This Pokémon benefits from every battle—even a defeat increases its strength a bit.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/821.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/821.png"
+    },
+	{
+      "national_dex": 822,
+      "regional_dex": 22,
+      "name": "Corvisquire",
+      "weight": 16.0,
+      "height": 0.8,
+      "type": [
+        "Flying"
+      ],
+      "desc": "The lessons of many harsh battles have taught it how to accurately judge an opponent's strength.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/822.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/822.png"
+    },
+	{
+      "national_dex": 823,
+      "regional_dex": 23,
+      "name": "Corviknight",
+      "weight": 75.0,
+      "height": 2.2,
+      "type": [
+        "Flying",
+		"Steel"
+      ],
+      "desc": "This Pokémon reigns supreme in the skies of the Galar region. The black luster of its steel body could drive terror into the heart of any foe.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/823.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/823.png"
+    },
+	{
+      "national_dex": 824,
+      "regional_dex": 10,
+      "name": "Blipbug",
+      "weight": 8.0,
+      "height": 0.4,
+      "type": [
+        "Bug"
+      ],
+      "desc": "A constant collector of information, this Pokémon is very smart. Very strong is what it isn't.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/824.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/824.png"
+    },
+	{
+      "national_dex": 825,
+      "regional_dex": 11,
+      "name": "Dottler",
+      "weight": 19.5,
+      "height": 0.4,
+      "type": [
+        "Bug",
+		"Psychic"
+      ],
+      "desc": "	It barely moves, but it's still alive. Hiding in its shell without food or water seems to have awakened its psychic powers.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/825.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/825.png"
+    },
+	{
+      "national_dex": 826,
+      "regional_dex": 12,
+      "name": "Orbeetle",
+      "weight": 40.8,
+      "height": 0.4,
+      "type": [
+        "Bug",
+		"Psychic"
+      ],
+      "desc": "",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/826.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/826.png"
+    },
+	{
+      "national_dex": 827,
+      "regional_dex": 29,
+      "name": "Nickit",
+      "weight": 8.9,
+      "height": 0.6,
+      "type": [
+        "Dark"
+      ],
+      "desc": "Aided by the soft pads on its feet, it silently raids the food stores of other Pokémon. It survives off its ill-gotten gains.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/827.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/827.png"
+    },
+	{
+      "national_dex": 828,
+      "regional_dex": 30,
+      "name": "Thievul",
+      "weight": 19.9,
+      "height": 1.2,
+      "type": [
+        "Dark"
+      ],
+      "desc": "	It secretly marks potential targets with a scent. By following the scent, it stalks its targets and steals from them when they least expect it.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/828.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/828.png"
+    },
+	{
+      "national_dex": 829,
+      "regional_dex": 126,
+      "name": "Gossifleur",
+      "weight": 2.2,
+      "height": 0.4,
+      "type": [
+        "Grass"
+      ],
+      "desc": "It whirls around in the wind while singing a joyous song. This delightful display has charmed many into raising this Pokémon.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/829.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/829.png"
+    },
+	{
+      "national_dex": 830,
+      "regional_dex": 127,
+      "name": "Eldegoss",
+      "weight": 2.5,
+      "height": 0.5,
+      "type": [
+        "Grass"
+      ],
+      "desc": "The cotton on the head of this Pokémon can be spun into a glossy, gorgeous yarn—a Galar regional specialty.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/830.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/830.png"
+    },
+	{
+      "national_dex": 831,
+      "regional_dex": 34,
+      "name": "Wooloo",
+      "weight": 6.0,
+      "height": 0.6,
+      "type": [
+        "Normal"
+      ],
+      "desc": "Its curly fleece is such an effective cushion that this Pokémon could fall off a cliff and stand right back up at the bottom, unharmed.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/831.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/831.png"
+    },
+	{
+      "national_dex": 832,
+      "regional_dex": 35,
+      "name": "Dubwool",
+      "weight": 43.0,
+      "height": 1.3,
+      "type": [
+        "Normal"
+      ],
+      "desc": "Its majestic horns are meant only to impress the opposite gender. They never see use in battle.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/832.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/832.png"
+    },
+	{
+      "national_dex": 859,
+      "regional_dex": 238,
+      "name": "Impidimp",
+      "weight": 5.5,
+      "height": 0.4,
+      "type": [
+        "Dark",
+		"Fairy"
+      ],
+      "desc": "It sneaks into people's homes, stealing things and feasting on the negative energy of the frustrated occupants.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/859.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/859.png"
+    },
+	{
+      "national_dex": 860,
+      "regional_dex": 239,
+      "name": "Morgrem",
+      "weight": 12.5,
+      "height": 0.8,
+      "type": [
+        "Dark",
+		"Fairy"
+      ],
+      "desc": "When it gets down on all fours as if to beg for forgiveness, it's trying to lure opponents in so that it can stab them with its spear-like hair.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/860.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/860.png"
+    },
+	{
+      "national_dex": 861,
+      "regional_dex": 240,
+      "name": "Grimmsnarl",
+      "weight": 61.0,
+      "height": 1.5,
+      "type": [
+        "Dark",
+		"Fairy"
+      ],
+      "desc": "Its hairs work like muscle fibers. When its hairs unfurl, they latch on to opponents, ensnaring them as tentacles would.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/861.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/861.png"
+    },
+	{
+      "national_dex": 885,
+      "regional_dex": 395,
+      "name": "Dreepy",
+      "weight": 2.0,
+      "height": 0.5,
+      "type": [
+        "Dragon",
+		"Ghost"
+      ],
+      "desc": "After being reborn as a ghost Pokémon, Dreepy wanders the areas it used to inhabit back when it was alive in prehistoric seas.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/885.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/885.png"
+    },
+	{
+      "national_dex": 886,
+      "regional_dex": 396,
+      "name": "Drakloak",
+      "weight": 11.0,
+      "height": 1.4,
+      "type": [
+        "Dragon",
+		"Ghost"
+      ],
+      "desc": "It's capable of flying faster than 120 mph. It battles alongside Dreepy and dotes on them until they successfully evolve.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/886.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/886.png"
+    },
+	{
+      "national_dex": 887,
+      "regional_dex": 397,
+      "name": "Dragapult",
+      "weight": 50.0,
+      "height": 3.0,
+      "type": [
+        "Dragon",
+		"Ghost"
+      ],
+      "desc": "When it isn't battling, it keeps Dreepy in the holes on its horns. Once a fight starts, it launches the Dreepy like supersonic missiles.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/887.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/887.png"
+    },
+	{
+      "national_dex": 778,
+      "regional_dex": 301,
+      "name": "Mimikyu",
+      "weight": 0.7,
+      "height": 0.2,
+      "type": [
+        "Ghost",
+		"Fairy"
+      ],
+      "desc": "There was a scientist who peeked under Mimikyu's old rag in the name of research. The scientist died of a mysterious disease.",
+      "std_img": "https://www.serebii.net/swordshield/pokemon/778.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/778.png"
     }
   ]
 }

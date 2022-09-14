@@ -20,17 +20,18 @@
 	<%@include file="components/navigation_menu.jsp"%>
 	<h1 class="page-name"><fmt:message key="title.pokedex"/></h1>
 
-	<div>
+
+	<div class="mt-2">
 		<form action="Servlet_filters" method="get">
-			<label for="partialName">Find by name </label>
+			<label class="fst-italic" for="partialName">Find by name  </label>
 			<input type="text" id="partialName" name="partialName">
 			<input class="btn btn-outline-dark btn-sm" type="submit" value="Search">
 		</form>
 	</div>
 
-	<div>
+	<div class="mt-2">
 		<form action="Servlet_filters" method="get">
-			<label for="typeChoice">Search by type </label>
+			<label class="fst-italic" for="typeChoice">Search by type  </label>
 			<select class="btn btn-outline-dark" id="typeChoice" name="typeChoice" onchange="this.form.submit()">
 				<option selected disabled>type</option>
 				<option class="NORMALColor" value="normal">normal</option>
@@ -55,30 +56,30 @@
 		</form>
 	</div>
 
-	<div>
+	<div class="mt-2">
 		<form action="Servlet_filters" method="get">
-			<label for="heightChoice">Search by height </label>
-			<input class="btn btn-dark btn-sm" type="button" value="-" onclick="subtract_one_m()">
+			<label class="fst-italic" for="heightChoice">Search by height  </label>
+			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_m()">
 			<input type="range" id="heightChoice" name="heightChoice" min="0" max="15" oninput="this.nextElementSibling.value">
 			<span>
 				<span id="heightValue"></span>
 				<span> m </span>
 			</span>
-			<input class="btn btn-dark btn-sm" type="button" value="+" onclick="add_one_m()">
+			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_m()">
 			<input class="btn btn-outline-dark btn-sm" type="submit" value="Search">
 		</form>
 	</div>
 
-	<div>
+	<div class="mt-2">
 		<form action="Servlet_filters" method="get">
-			<label for="weightChoice">Search by weight </label>
-			<input class="btn btn-dark btn-sm" type="button" value="-" onclick="subtract_one_kg()">
+			<label class="fst-italic" for="weightChoice">Search by weight  </label>
+			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_kg()">
 			<input type="range" id="weightChoice" name="weightChoice" min="0" max="1400" oninput="this.nextElementSibling.value">
 			<span>
 				<span id="weightValue"></span>
 				<span> kg </span>
 			</span>
-			<input class="btn btn-dark btn-sm" type="button" value="+" onclick="add_one_kg()">
+			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_kg()">
 			<input class="btn btn-outline-dark btn-sm" type="submit" value="Search">
 		</form>
 	</div>
