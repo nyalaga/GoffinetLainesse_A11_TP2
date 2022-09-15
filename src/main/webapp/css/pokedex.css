@@ -1,5 +1,5 @@
-
-/*Chrome*/
+/* Slider */
+/* Chrome */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
         overflow: hidden;
@@ -20,16 +20,15 @@
         cursor: ew-resize;
         box-shadow: -80px 0 0 80px red;
     }
-
 }
-/** FF*/
+/* FireFox */
 input[type="range"]::-moz-range-progress {
     background-color: red;
 }
 input[type="range"]::-moz-range-track {
     background-color: lightgrey;
 }
-/* IE*/
+/* IE */
 input[type="range"]::-ms-fill-lower {
     background-color: red;
 }
@@ -98,13 +97,13 @@ input[type="range"]::-ms-fill-upper {
 }
 
 @keyframes pokedexCardExpand {
-    0% {scale: 1;perspective: 1000px; z-index: 0}
-    100% {scale: 1.75; transform: rotateY(180deg);z-index: 0}
+    0% {scale: 1; perspective: 1000px}
+    100% {scale: 1; transform: rotateY(180deg)}
 }
 
 @keyframes pokedexCardShrink {
-    0% {scale: 1.75;perspective: 1000px; transform: rotateY(180deg);z-index: 0}
-    100% {scale: 1; z-index: 10}
+    0% {scale: 1; perspective: 1000px; transform: rotateY(180deg)}
+    100% {scale: 1}
 }
 
 .animatePokedexCardExpand {
@@ -112,6 +111,7 @@ input[type="range"]::-ms-fill-upper {
     animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
+
 }
 
 .animatePokedexCardShrink {
