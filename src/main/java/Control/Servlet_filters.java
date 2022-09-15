@@ -46,7 +46,7 @@ public class Servlet_filters extends HttpServlet {
         request.setAttribute("pkmList", pkmList);
 
         if(pkmList == null || pkmList.isEmpty()) {
-            dest = "/404.html";
+            dest = "/404.jsp";
         } else {
             dest = "/pokemonsFound.jsp";
         }
