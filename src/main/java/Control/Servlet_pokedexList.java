@@ -17,7 +17,7 @@ public class Servlet_pokedexList extends HttpServlet {
     // Création de la BD initiale
 //    public void init() {
 //        try {
-//            String message = io.migrateJSONtoDB(getServletContext().getRealPath("/json/pokedex.json"));
+//            String message = io.migrateJSONtoDB(getServletContext().getRealPath("/resources/json/pokedex.json"));
 //            System.out.println(message);
 //        } catch (IOException | ParseException e) {
 //            e.printStackTrace();
