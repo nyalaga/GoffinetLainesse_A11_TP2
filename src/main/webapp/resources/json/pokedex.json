@@ -206,7 +206,7 @@
         "Bug",
 		"Psychic"
       ],
-      "desc": "	It barely moves, but it's still alive. Hiding in its shell without food or water seems to have awakened its psychic powers.",
+      "desc": "It barely moves, but it's still alive. Hiding in its shell without food or water seems to have awakened its psychic powers.",
       "std_img": "https://www.serebii.net/swordshield/pokemon/825.png",
       "shiny_img": "https://www.serebii.net/Shiny/SWSH/825.png"
     },
@@ -246,7 +246,7 @@
       "type": [
         "Dark"
       ],
-      "desc": "	It secretly marks potential targets with a scent. By following the scent, it stalks its targets and steals from them when they least expect it.",
+      "desc": "It secretly marks potential targets with a scent. By following the scent, it stalks its targets and steals from them when they least expect it.",
       "std_img": "https://www.serebii.net/swordshield/pokemon/828.png",
       "shiny_img": "https://www.serebii.net/Shiny/SWSH/828.png"
     },
