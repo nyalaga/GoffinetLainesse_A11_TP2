@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=500px, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>${welcome}</title>
+    <title>Pokemon</title>
 </head>
 <body>
 <fmt:message key="welcome" var="welcome"/>
 <div class="main-container">
     <%@include file="components/navigation_menu.jsp"%>
-    <h1 class="page-name">${welcome}</h1>
+    <h4 class="page-name p-2 fst-italic">${welcome}</h4>
 </div>
 <div class="main-container">
     <img src="resources/img/Pokemons.png" class="rounded-3 img-fluid" alt="Image d'accueil">

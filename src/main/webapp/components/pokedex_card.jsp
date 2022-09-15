@@ -1,4 +1,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<fmt:setBundle basename="Lang"/>
+<fmt:setLocale value="${sessionScope.Lang}"/>
+
 <div class="pokedex">
     <div class="pokedex-row">
         <c:forEach var="pkm" items="${requestScope.pkmList}">
@@ -24,23 +29,23 @@
                             <div class="h5 fw-bold text-dark">${pkm.name}</div>
                             <div class="h6 text-start">
                                 <div>
-                                    <span>National index : </span>
+                                    <span><fmt:message key="card.natID"/> : </span>
                                     <span class="fw-bold text-dark">${pkm.nationalDex}</span>
                                 </div>
                                 <div>
-                                    <span>Régional index: </span>
+                                    <span><fmt:message key="card.regID"/> </span>
                                     <span class="fw-bold text-dark">${pkm.regionalDex}</span>
                                 </div>
                                 <div class="mt-2">
-                                    <span>Weight : </span>
+                                    <span><fmt:message key="card.weight"/> : </span>
                                     <span class="fw-bold text-dark">${pkm.weight} kg</span>
                                 </div>
                                 <div>
-                                    <span>Height : </span>
+                                    <span><fmt:message key="card.height"/> : </span>
                                     <span class="fw-bold text-dark">${pkm.height} m</span>
                                 </div>
                                 <div class="mt-2">
-                                    <span>Description: </span>
+                                    <span><fmt:message key="card.desc"/> : </span>
                                     <span class="fst-italic text-dark">${pkm.description}</span>
                                 </div>
                             </div>
