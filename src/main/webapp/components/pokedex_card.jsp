@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="mt-2">
                                     <span><fmt:message key="card.desc"/> : </span>
-                                    <span class="fst-italic text-dark">${pkm.description}</span>
+                                    <span class="fst-italic text-dark pkmDesc">${pkm.description}</span>
                                 </div>
                             </div>
                         </div>

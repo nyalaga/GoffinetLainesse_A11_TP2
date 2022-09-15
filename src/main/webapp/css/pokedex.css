@@ -85,6 +85,7 @@ input[type="range"]::-ms-fill-upper {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    text-overflow: ellipsis;
 }
 
 .pokedex-card-front {
@@ -121,4 +122,10 @@ input[type="range"]::-ms-fill-upper {
     animation-fill-mode: forwards;
 }
 
-
+.pkmDesc {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 210px;
+    height: 96px;
+}

@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Montserrat-Light";
+    src: local("../resources/font/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-SemiBold";
+    src: local("../resources/font/Montserrat-SemiBold.ttf");
+}
+
 .NORMALColor{
     background-color: #929ba3;
 }
@@ -72,11 +82,11 @@
 
 body {
     background-color: #ffffff;
-    font-family: "Montserrat Light", serif;
+    font-family: "Montserrat-Light", serif;
 }
 
 h1 {
-    font-family: "Montserrat SemiBold", serif;
+    font-family: "Montserrat-SemiBold", serif;
     font-size: xxx-large;
 }
 

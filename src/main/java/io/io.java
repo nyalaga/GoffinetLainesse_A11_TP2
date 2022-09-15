@@ -8,21 +8,21 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
 public class io {
     public static String migrateJSONtoDB(String fichier) throws IOException, ParseException {
-        Object object = new JSONParser().parse(new FileReader(fichier));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(fichier), StandardCharsets.UTF_8));
+        Object object = new JSONParser().parse(bufferedReader);
         JSONObject jso = (JSONObject) object;
         JSONArray pokemons = (JSONArray) jso.get("pokedex");
 
         PokemonDAO pokemonDAO = new PokemonDAO();
 
 
-        for (int i = 0; i < pokemons.size(); i++) {
-            Object o = pokemons.get(i);
+        for (Object o : pokemons) {
             JSONObject pokemonJson = ((JSONObject) o);
 
             String sNationalDex = pokemonJson.get("national_dex").toString();
@@ -38,7 +38,7 @@ public class io {
             PkmType secondaryType = null;
             if (types.size() >= 1) {
                 Object type1 = types.get(0);
-                primaryType = getTypeAsEnum((String)type1);
+                primaryType = getTypeAsEnum((String) type1);
                 if (types.size() >= 2) {
                     Object type2 = types.get(1);
                     secondaryType = getTypeAsEnum((String) type2);
