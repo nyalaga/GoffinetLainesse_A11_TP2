@@ -124,20 +124,22 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
 
     /**
      * Obtenir la liste des Pokemons selon un poids déterminé
-     * @param weight du Pokemon
+     * @param minWeight poids minimum en kg
+     * @param maxWeight poids minimum en kg
      * @return la liste des Pokemons ayant ce poids
      */
     @Override
-    public List<Pokemon> getByWeight(double weight) {
+    public List<Pokemon> getByWeight(double minWeight, double maxWeight) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         List<Pokemon> listPokemons;
 
         try {
             transaction.begin();
-            String query = "SELECT p FROM Pokemon p WHERE p.weight >= :weight AND p.weight < :weight + 1";
+            String query = "SELECT p FROM Pokemon p WHERE p.weight >= :minWeight AND p.weight <= :maxWeight";
             TypedQuery<Pokemon> getByWeightQuery = entityManager.createQuery(query, Pokemon.class);
-            getByWeightQuery.setParameter("weight", weight);
+            getByWeightQuery.setParameter("minWeight", minWeight);
+            getByWeightQuery.setParameter("maxWeight", maxWeight);
             listPokemons = getByWeightQuery.getResultList();
             return listPokemons;
         } catch (Exception e) {

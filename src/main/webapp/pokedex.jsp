@@ -62,7 +62,9 @@
 			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_m()">
 			<input type="range" id="heightChoice" name="heightChoice" min="0" max="15" oninput="this.nextElementSibling.value">
 			<span>
-				<span id="heightValue"></span>
+				<span id="minHeightValue"></span>
+				<span> - </span>
+				<span id="maxHeightValue"></span>
 				<span> m </span>
 			</span>
 			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_m()">
@@ -70,14 +72,16 @@
 		</form>
 	</div>
 
-	<div class="mt-2">
+	<div class="row mt-2">
 		<form action="Servlet_filters" method="get">
 			<label class="fst-italic" for="weightChoice"><fmt:message key="search.weight"/>  </label>
 			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_kg()">
 			<input type="range" id="weightChoice" name="weightChoice" min="0" max="1400" oninput="this.nextElementSibling.value">
 			<span>
-				<span id="weightValue"></span>
-				<span> kg </span>
+				<input type="text" readonly id="minWeightValue" class="form-control-plaintext slidersInput" name="minWeightValue">
+				<label for="minWeightValue"> - </label>
+				<input type="text" readonly class="form-control-plaintext slidersInput" id="maxWeightValue" name="maxWeightValue">
+				<label> kg </label>
 			</span>
 			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_kg()">
 			<input class="btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">

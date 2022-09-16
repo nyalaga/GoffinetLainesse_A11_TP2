@@ -18,43 +18,55 @@ for (const card of pokedexCards) {
 }
 
 // dynamic value for the height
+const heightRange = 1;
 let heightSlider = document.getElementById("heightChoice");
-let heightOutput = document.getElementById("heightValue");
-heightOutput.innerHTML = heightSlider.value;
+let minHeightOutput = document.getElementById("minHeightValue");
+let maxHeightOutput = document.getElementById("maxHeightValue");
+minHeightOutput.innerHTML = heightSlider.value;
+maxHeightOutput.innerHTML = (parseInt(heightSlider.value) + heightRange).toString();
 
 heightSlider.oninput = function() {
-    heightOutput.innerHTML = this.value;
+    minHeightOutput.innerHTML = this.value;
+    maxHeightOutput.innerHTML = (parseInt(this.value) + heightRange).toString();
 }
 
 function add_one_m() {
     let addValue = parseInt(heightSlider.value) + 1;
     heightSlider.value = addValue;
-    heightOutput.innerHTML = addValue.toString();
+    minHeightOutput.innerHTML = addValue.toString();
+    maxHeightOutput.innerHTML = (addValue + heightRange).toString();
 }
 
 function subtract_one_m() {
     let subtractValue = parseInt(heightSlider.value) - 1;
     heightSlider.value = subtractValue;
-    heightOutput.innerHTML = subtractValue.toString();
+    minHeightOutput.innerHTML = subtractValue.toString();
+    maxHeightOutput.innerHTML = (subtractValue + heightRange).toString();
 }
 
 // dynamic value for the weight
+const weightRange = 10;
 let weightSlider = document.getElementById("weightChoice");
-let weightOutput = document.getElementById("weightValue");
-weightOutput.innerHTML = weightSlider.value;
+let minWeightOutput = document.getElementById("minWeightValue");
+let maxWeightOutput = document.getElementById("maxWeightValue");
+minWeightOutput.value = weightSlider.value;
+maxWeightOutput.value = (parseInt(weightSlider.value) + weightRange).toString();
 
 weightSlider.oninput = function() {
-    weightOutput.innerHTML = this.value;
+    minWeightOutput.value = this.value;
+    maxWeightOutput.value = (parseInt(this.value) + weightRange).toString();
 }
 
 function add_one_kg() {
     let addValue = parseInt(weightSlider.value) + 1;
     weightSlider.value = addValue;
-    weightOutput.innerHTML = addValue.toString();
+    minWeightOutput.value = addValue.toString();
+    maxWeightOutput.value = (addValue + weightRange).toString();
 }
 
 function subtract_one_kg() {
     let subtractValue = parseInt(weightSlider.value) - 1;
     weightSlider.value = subtractValue;
-    weightOutput.innerHTML = subtractValue.toString();
+    minWeightOutput.value = subtractValue.toString();
+    maxWeightOutput.value = (subtractValue + weightRange).toString();
 }

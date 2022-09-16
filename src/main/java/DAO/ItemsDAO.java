@@ -14,7 +14,7 @@ public interface ItemsDAO<T> {
 
     List<T> getByType(PkmType type);
 
-    List<T> getByWeight(double weight);
+    List<T> getByWeight(double minWeight, double maxWeight);
 
     List<T> getByHeight(double height);
 

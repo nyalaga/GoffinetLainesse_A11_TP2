@@ -129,3 +129,7 @@ input[type="range"]::-ms-fill-upper {
     width: 210px;
     height: 96px;
 }
+
+.slidersInput {
+    width: 15px;
+}
