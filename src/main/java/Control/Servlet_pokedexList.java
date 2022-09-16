@@ -26,14 +26,15 @@ public class Servlet_pokedexList extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
         PokemonDAO pokemonDAO = new PokemonDAO();
 
         List<Pokemon> pkmList = pokemonDAO.getAllPokemons();
 
-        request.setAttribute("pkmList", pkmList);
+        session.setAttribute("pkmList", pkmList);
 
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/pokedex.jsp");
-        rd.forward(request, response);
+        response.sendRedirect("pokedex.jsp");
     }
 
     @Override

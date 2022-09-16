@@ -130,6 +130,10 @@ input[type="range"]::-ms-fill-upper {
     height: 96px;
 }
 
-.slidersInput {
-    width: 15px;
+.heightSlider {
+    width: 20px;
+}
+
+.weightSlider {
+    width: 40px;
 }

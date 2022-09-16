@@ -22,26 +22,26 @@ const heightRange = 1;
 let heightSlider = document.getElementById("heightChoice");
 let minHeightOutput = document.getElementById("minHeightValue");
 let maxHeightOutput = document.getElementById("maxHeightValue");
-minHeightOutput.innerHTML = heightSlider.value;
-maxHeightOutput.innerHTML = (parseInt(heightSlider.value) + heightRange).toString();
+minHeightOutput.value = heightSlider.value;
+maxHeightOutput.value = (parseInt(heightSlider.value) + heightRange).toString();
 
 heightSlider.oninput = function() {
-    minHeightOutput.innerHTML = this.value;
-    maxHeightOutput.innerHTML = (parseInt(this.value) + heightRange).toString();
+    minHeightOutput.value = this.value;
+    maxHeightOutput.value = (parseInt(this.value) + heightRange).toString();
 }
 
 function add_one_m() {
     let addValue = parseInt(heightSlider.value) + 1;
     heightSlider.value = addValue;
-    minHeightOutput.innerHTML = addValue.toString();
-    maxHeightOutput.innerHTML = (addValue + heightRange).toString();
+    minHeightOutput.value = addValue.toString();
+    maxHeightOutput.value = (addValue + heightRange).toString();
 }
 
 function subtract_one_m() {
     let subtractValue = parseInt(heightSlider.value) - 1;
     heightSlider.value = subtractValue;
-    minHeightOutput.innerHTML = subtractValue.toString();
-    maxHeightOutput.innerHTML = (subtractValue + heightRange).toString();
+    minHeightOutput.value = subtractValue.toString();
+    maxHeightOutput.value = (subtractValue + heightRange).toString();
 }
 
 // dynamic value for the weight

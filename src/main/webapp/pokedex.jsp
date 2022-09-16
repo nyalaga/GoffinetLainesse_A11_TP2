@@ -20,7 +20,6 @@
 	<%@include file="components/navigation_menu.jsp"%>
 	<h1 class="page-name"><fmt:message key="title.pokedex"/></h1>
 
-
 	<div class="mt-2">
 		<form action="Servlet_filters" method="get">
 			<label class="fst-italic" for="partialName"><fmt:message key="search.name"/>  </label>
@@ -57,34 +56,30 @@
 	</div>
 
 	<div class="mt-2">
-		<form action="Servlet_filters" method="get">
-			<label class="fst-italic" for="heightChoice"><fmt:message key="search.height"/>  </label>
-			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_m()">
-			<input type="range" id="heightChoice" name="heightChoice" min="0" max="15" oninput="this.nextElementSibling.value">
-			<span>
-				<span id="minHeightValue"></span>
-				<span> - </span>
-				<span id="maxHeightValue"></span>
-				<span> m </span>
-			</span>
-			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_m()">
-			<input class="btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
+		<form class="row" action="Servlet_filters" method="get">
+			<label class="col-auto fst-italic" for="heightChoice"><fmt:message key="search.height"/>  </label>
+			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_m()">
+			<input class="col-auto" type="range" id="heightChoice" name="heightChoice" min="0" max="15" oninput="this.nextElementSibling.value">
+			<input readonly class="col-auto form-control-plaintext text-center heightSlider" type="text"  id="minHeightValue" name="minHeightValue">
+			<label class="col-auto align-self-center" for="minHeightValue">-</label>
+			<input readonly class="col-auto form-control-plaintext text-center heightSlider" type="text"  id="maxHeightValue" name="maxHeightValue">
+			<label class="col-auto align-self-center" for="maxHeightValue">m </label>
+			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_m()">
+			<input class="col-auto ms-2 btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
 		</form>
 	</div>
 
-	<div class="row mt-2">
-		<form action="Servlet_filters" method="get">
-			<label class="fst-italic" for="weightChoice"><fmt:message key="search.weight"/>  </label>
-			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_kg()">
-			<input type="range" id="weightChoice" name="weightChoice" min="0" max="1400" oninput="this.nextElementSibling.value">
-			<span>
-				<input type="text" readonly id="minWeightValue" class="form-control-plaintext slidersInput" name="minWeightValue">
-				<label for="minWeightValue"> - </label>
-				<input type="text" readonly class="form-control-plaintext slidersInput" id="maxWeightValue" name="maxWeightValue">
-				<label> kg </label>
-			</span>
-			<input class="btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_kg()">
-			<input class="btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
+	<div class="mt-2">
+		<form class="row" action="Servlet_filters" method="get">
+			<label class="col-auto fst-italic" for="weightChoice"><fmt:message key="search.weight"/>  </label>
+			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_kg()">
+			<input class="col-auto" type="range" id="weightChoice" name="weightChoice" min="0" max="1400" oninput="this.nextElementSibling.value">
+			<input readonly class="col-auto form-control-plaintext text-center weightSlider" type="text"  id="minWeightValue" name="minWeightValue">
+			<label class="col-auto align-self-center" for="minWeightValue">-</label>
+			<input readonly class="col-auto form-control-plaintext text-center weightSlider" type="text"  id="maxWeightValue" name="maxWeightValue">
+			<label class="col-auto align-self-center" for="maxWeightValue">kg </label>
+			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_kg()">
+			<input class="col-auto ms-2 btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
 		</form>
 	</div>
 

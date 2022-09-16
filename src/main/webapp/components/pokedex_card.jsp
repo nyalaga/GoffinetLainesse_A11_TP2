@@ -6,7 +6,7 @@
 
 <div class="pokedex">
     <div class="pokedex-row">
-        <c:forEach var="pkm" items="${requestScope.pkmList}">
+        <c:forEach var="pkm" items="${sessionScope.pkmList}">
             <div class="pokedex-card">
                 <div class="pokedex-card-inner text-white">
                     <div class="pokedex-card-front">
