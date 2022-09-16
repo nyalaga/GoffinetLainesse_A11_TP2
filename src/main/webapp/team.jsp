@@ -12,8 +12,9 @@
 	<title>My Team</title>
 </head>
 <body>
+
+<fmt:setLocale value="${sessionScope.lang}"/>
 <fmt:setBundle basename="Lang"/>
-<fmt:setLocale value="${sessionScope.Lang}"/>
 
 <div class="main-container">
 	<%@include file="components/navigation_menu.jsp"%>

@@ -15,7 +15,7 @@ public class Servlet_i18n extends HttpServlet {
 
         String language = (String) session.getAttribute("lang");
         if (!(lang.equals(language))) {
-            session.setAttribute("Lang", lang);
+            session.setAttribute("lang", lang);
         }
 
         response.sendRedirect(path);
