@@ -20,4 +20,7 @@ public interface ItemsDAO<T> {
 
     List<T> getAllPokemons();
 
+    void update(T item);
+
+    void delete(int id);
 }
