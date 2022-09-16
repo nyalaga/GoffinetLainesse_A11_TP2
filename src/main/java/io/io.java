@@ -13,6 +13,14 @@ import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
 public class io {
+
+    /**
+     * Récupérer les données des Pokemon du fichier JSON
+     * @param fichier chemin du fichier JSON
+     * @return un message de confirmation (string)
+     * @throws IOException
+     * @throws ParseException
+     */
     public static String migrateJSONtoDB(String fichier) throws IOException, ParseException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(fichier), StandardCharsets.UTF_8));
         Object object = new JSONParser().parse(bufferedReader);

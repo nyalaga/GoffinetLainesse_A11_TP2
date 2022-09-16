@@ -1,3 +1,4 @@
+// gérer l'animation des cartes pokemon
 const pokedexCards = document.querySelectorAll(".pokedex-card-inner");
 
 for (const card of pokedexCards) {
@@ -17,7 +18,7 @@ for (const card of pokedexCards) {
     })
 }
 
-// dynamic value for the height
+// obtenir les valeurs dynamiques pour la glissière de la taille
 const heightRange = 1;
 let heightSlider = document.getElementById("heightChoice");
 let minHeightOutput = document.getElementById("minHeightValue");
@@ -30,6 +31,7 @@ heightSlider.oninput = function() {
     maxHeightOutput.value = (parseInt(this.value) + heightRange).toString();
 }
 
+// gérer le bouton "+" pour ajouter "un" à la valeur de taille
 function add_one_m() {
     let addValue = parseInt(heightSlider.value) + 1;
     heightSlider.value = addValue;
@@ -37,6 +39,7 @@ function add_one_m() {
     maxHeightOutput.value = (addValue + heightRange).toString();
 }
 
+// gérer le bouton "-" pour soustraire "un" à la valeur de taille
 function subtract_one_m() {
     let subtractValue = parseInt(heightSlider.value) - 1;
     heightSlider.value = subtractValue;
@@ -44,7 +47,7 @@ function subtract_one_m() {
     maxHeightOutput.value = (subtractValue + heightRange).toString();
 }
 
-// dynamic value for the weight
+// obtenir les valeurs dynamiques pour la glissière du poids
 const weightRange = 10;
 let weightSlider = document.getElementById("weightChoice");
 let minWeightOutput = document.getElementById("minWeightValue");
@@ -57,6 +60,7 @@ weightSlider.oninput = function() {
     maxWeightOutput.value = (parseInt(this.value) + weightRange).toString();
 }
 
+// gérer le bouton "+" pour ajouter "un" à la valeur de poids
 function add_one_kg() {
     let addValue = parseInt(weightSlider.value) + 1;
     weightSlider.value = addValue;
@@ -64,6 +68,7 @@ function add_one_kg() {
     maxWeightOutput.value = (addValue + weightRange).toString();
 }
 
+// gérer le bouton "-" pour soustraire "un" à la valeur du poids
 function subtract_one_kg() {
     let subtractValue = parseInt(weightSlider.value) - 1;
     weightSlider.value = subtractValue;

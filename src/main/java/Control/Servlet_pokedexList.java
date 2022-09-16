@@ -14,7 +14,7 @@ import java.util.List;
 @WebServlet(name = "Servlet_pokedexList", value = "/Servlet_pokedexList")
 public class Servlet_pokedexList extends HttpServlet {
 
-//Création de la BD initiale
+    // créer de la BD initiale
     public void init() {
         try {
             String message = io.migrateJSONtoDB(getServletContext().getRealPath("/resources/json/pokedex.json"));
@@ -24,6 +24,7 @@ public class Servlet_pokedexList extends HttpServlet {
         }
     }
 
+    // obtenir les données des Pokemon
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();

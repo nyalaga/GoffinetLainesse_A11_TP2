@@ -53,7 +53,6 @@ public class Servlet_filters extends HttpServlet {
         }
         RequestDispatcher rd = request.getRequestDispatcher(dest);
         rd.forward(request, response);
-
     }
 
     @Override

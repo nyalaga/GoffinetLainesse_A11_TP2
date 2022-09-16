@@ -21,6 +21,7 @@
         box-shadow: -80px 0 0 80px red;
     }
 }
+
 /* FireFox */
 input[type="range"]::-moz-range-progress {
     background-color: red;
@@ -28,12 +29,21 @@ input[type="range"]::-moz-range-progress {
 input[type="range"]::-moz-range-track {
     background-color: lightgrey;
 }
+
 /* IE */
 input[type="range"]::-ms-fill-lower {
     background-color: red;
 }
 input[type="range"]::-ms-fill-upper {
     background-color: lightgrey;
+}
+
+.heightSlider {
+    width: 20px;
+}
+
+.weightSlider {
+    width: 40px;
 }
 
 .pokedex {
@@ -128,12 +138,4 @@ input[type="range"]::-ms-fill-upper {
     overflow: hidden;
     width: 210px;
     height: 96px;
-}
-
-.heightSlider {
-    width: 20px;
-}
-
-.weightSlider {
-    width: 40px;
 }
