@@ -24,7 +24,7 @@ public class Servlet_addPkm extends HttpServlet {
         PkmType primaryType = PkmType.valueOf(request.getParameter("addType1").toUpperCase(Locale.ROOT));
         PkmType secondaryType = null;
         String type2 = request.getParameter("addType2");
-        if (!type2.isEmpty()) {
+        if (!(type2.isEmpty())) {
             secondaryType  = PkmType.valueOf(type2.toUpperCase(Locale.ROOT));
         }
 

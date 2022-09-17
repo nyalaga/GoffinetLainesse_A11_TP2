@@ -21,7 +21,7 @@
 	<h1 class="page-name"><fmt:message key="data.add"/></h1>
 
 	<form class="fst-italic" action="Servlet_addPkm" method="get">
-		<div class="row mt-5 mb-3 ms-3">
+		<div class="row mt-5 mb-3 ms-3 fst-normal fw-bold">
 				<fmt:message key="data.addSentence"/>
 		</div>
 		<div class="row m-1">
@@ -42,13 +42,13 @@
 		<div class="row m-1">
 			<label class="col-auto" for="addWeight"><fmt:message key="card.weight"/></label>
 			<span class="col-auto text-danger">*  </span>
-			<input class="col-auto" type="text" id="addWeight" name="addWeight"/>
+			<input class="col-2" type="text" id="addWeight" name="addWeight"/>
 			<span class="col-auto"><fmt:message key="card.kg"/></span>
 		</div>
 		<div class="row m-1">
 			<label class="col-auto" for="addHeight"><fmt:message key="card.height"/></label>
 			<span class="col-auto text-danger">*  </span>
-			<input class="col-auto" type="text" id="addHeight" name="addHeight"/>
+			<input class="col-2" type="text" id="addHeight" name="addHeight"/>
 			<span class="col-auto"><fmt:message key="card.m"/></span>
 		</div>
 		<div class="row m-1">
@@ -60,8 +60,8 @@
 		<div class="row m-1">
 			<label class="col-auto fst-italic" for="addType1"><fmt:message key="types"/></label>
 			<span class="col-auto text-danger">*  </span>
-			<select class="col-auto btn btn-outline-dark" id="addType1" name="addType1">
-				<option selected disabled><fmt:message key="type"/></option>
+			<select class="col-auto btn btn-outline-dark me-1" id="addType1" name="addType1">
+				<option selected disabled><fmt:message key="type"/> 1</option>
 				<option class="NORMALColor" value="normal"><fmt:message key="type.normal"/></option>
 				<option class="FIREColor" value="fire"><fmt:message key="type.fire"/></option>
 				<option class="WATERColor" value="water"><fmt:message key="type.water"/></option>
@@ -82,7 +82,7 @@
 				<option class="FAIRYColor" value="fairy"><fmt:message key="type.fairy"/></option>
 			</select>
 			<select class="col-auto btn btn-outline-dark" id="addType2" name="addType2">
-				<option value=""><fmt:message key="type"/></option>
+				<option value=""><fmt:message key="type"/> 2</option>
 				<option class="NORMALColor" value="normal"><fmt:message key="type.normal"/></option>
 				<option class="FIREColor" value="fire"><fmt:message key="type.fire"/></option>
 				<option class="WATERColor" value="water"><fmt:message key="type.water"/></option>
@@ -106,9 +106,9 @@
 		<div class="row m-4">
 			<div class="text-danger">* <fmt:message key="data.required"/></div>
 		</div>
-		<div class="row m-3 justify-content-between">
-			<input class="col-auto btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="data.confirm"/>">
-			<a class="col-auto btn btn-outline-dark btn-sm" type="button" href="Servlet_pokedexList"><fmt:message key="data.cancel"/></a>
+		<div class="row m-4 justify-content-evenly">
+			<input class="col-auto btn btn-dark btn-sm" type="submit" value="<fmt:message key="data.confirm"/>">
+			<a class="col-auto btn btn-dark btn-sm" type="button" href="Servlet_pokedexList"><fmt:message key="data.cancel"/></a>
 		</div>
 	</form>
 

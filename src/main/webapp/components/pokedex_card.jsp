@@ -33,7 +33,7 @@
                                     <span class="fw-bold text-dark">${pkm.nationalDex}</span>
                                 </div>
                                 <div>
-                                    <span><fmt:message key="card.regID"/> </span>
+                                    <span><fmt:message key="card.regID"/> : </span>
                                     <span class="fw-bold text-dark">${pkm.regionalDex}</span>
                                 </div>
                                 <div class="mt-2">

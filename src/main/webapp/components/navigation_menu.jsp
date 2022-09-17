@@ -5,9 +5,12 @@
 <fmt:setBundle basename="Lang"/>
 
 <div class="btn-group lang-group" role="group" aria-label="Basic example">
-	<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}/Servlet_i18n?lang=en_US&path=${pageContext.request.requestURI}"><fmt:message key="choice.english"/></a>
-	<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}/Servlet_i18n?lang=fr_CA&path=${pageContext.request.requestURI}"><fmt:message key="choice.french"/></a>
-	<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}/Servlet_i18n?lang=ru_RU&path=${pageContext.request.requestURI}"><fmt:message key="choice.russian"/></a>
+	<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}
+	/Servlet_i18n?lang=en_US&path=${pageContext.request.requestURI}"><fmt:message key="choice.english"/></a>
+	<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}
+	/Servlet_i18n?lang=fr_CA&path=${pageContext.request.requestURI}"><fmt:message key="choice.french"/></a>
+	<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}
+	/Servlet_i18n?lang=ru_RU&path=${pageContext.request.requestURI}"><fmt:message key="choice.russian"/></a>
 </div>
 <div class="top-menu">
 	<a class="btn btn-outline-danger btn-menu" href="index.jsp"><fmt:message key="nav.home"/></a>
