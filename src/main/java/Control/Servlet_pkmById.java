@@ -29,7 +29,7 @@ public class Servlet_pkmById extends HttpServlet {
             request.setAttribute("type2", type2);
         }
 
-        RequestDispatcher rd = request.getRequestDispatcher("updateForm.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("deleteForm.jsp");
         rd.forward(request, response);
     }
 

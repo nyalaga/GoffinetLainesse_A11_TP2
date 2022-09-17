@@ -1,4 +1,6 @@
+<%@ page import="model.PkmType" %>
 <%@ page contentType="text/html;charset=UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
@@ -8,7 +10,7 @@
 	<meta name="viewport" content="width=500px, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/stats.css">
+	<link rel="stylesheet" href="css/pokedex.css">
 	<title>Delete form</title>
 </head>
 <body>
@@ -18,94 +20,89 @@
 
 <div class="main-container">
 	<%@include file="components/navigation_menu.jsp"%>
-	<h1 class="page-name"><fmt:message key="data.add"/></h1>
+	<h1 class="page-name"><fmt:message key="data.delete"/></h1>
 
-	<form class="fst-italic" action="Servlet_deletePkm" method="get">
-		<div class="row m-1">
-			<label class="col-auto" for="addNatId"><fmt:message key="card.natID"/></label>
-			<input class="col-auto" type="text" id="addNatId" name="addNatId"/>
-			<input class="col-auto ms-2 btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
-		</div>
-		<div class="row mt-5 mb-3 ms-3">
-			<fmt:message key="data.deleteSentence"/>
-		</div>
-		<div class="row m-1">
-			<label class="col-auto" for="addRegId"><fmt:message key="card.regID"/></label>
-			<input class="col-auto" type="text" id="addRegId" name="addRegId" value="${pkm.regionalDex}"/>
-		</div>
-		<div class="row m-1">
-			<label class="col-auto" for="addName"><fmt:message key="card.name"/></label>
-			<input class="col-auto" type="text" id="addName" name="addName" value="${pkm.name}"/>
-		</div>
-		<div class="row m-1">
-			<label class="col-auto" for="addWeight"><fmt:message key="card.weight"/></label>
-			<input class="col-auto" type="text" id="addWeight" name="addWeight" value="${pkm.weight}"/>
-			<span class="col-auto"><fmt:message key="card.kg"/></span>
-		</div>
-		<div class="row m-1">
-			<label class="col-auto" for="addHeight"><fmt:message key="card.height"/></label>
-			<input class="col-auto" type="text" id="addHeight" name="addHeight" value="${pkm.height}"/>
-			<span class="col-auto"><fmt:message key="card.m"/></span>
-		</div>
-		<div class="row m-1">
-			<label class="col-auto" for="addDesc"><fmt:message key="card.desc"/></label>
-			<span class="col-auto"> (<fmt:message key="data.100char"/>)</span>
-			<textarea class="col-auto" id="addDesc" name="addDesc" rows="3" cols="25">${pkm.description}</textarea>
-		</div>
-		<div class="row m-1">
-			<label class="col-auto fst-italic" for="addType1"><fmt:message key="types"/></label>
-			<select class="col-auto btn btn-outline-dark" id="addType1" name="addType1">
-				<option class="${pkm.primaryType}Color" value="${pkm.primaryType}"></option>
-				<option class="NORMALColor" value="normal"><fmt:message key="type.normal"/></option>
-				<option class="FIREColor" value="fire"><fmt:message key="type.fire"/></option>
-				<option class="WATERColor" value="water"><fmt:message key="type.water"/></option>
-				<option class="GRASSColor" value="grass"><fmt:message key="type.grass"/></option>
-				<option class="ELECTRICColor" value="electric"><fmt:message key="type.electric"/></option>
-				<option class="ICEColor" value="ice"><fmt:message key="type.ice"/></option>
-				<option class="FIGHTINGColor" value="fighting"><fmt:message key="type.fighting"/></option>
-				<option class="POISONColor" value="poison"><fmt:message key="type.poison"/></option>
-				<option class="GROUNDColor" value="ground"><fmt:message key="type.ground"/></option>
-				<option class="FLYINGColor" value="flying"><fmt:message key="type.flying"/></option>
-				<option class="PSYCHICColor" value="psychic"><fmt:message key="type.psychic"/></option>
-				<option class="BUGColor" value="bug"><fmt:message key="type.bug"/></option>
-				<option class="ROCKColor" value="rock"><fmt:message key="type.rock"/></option>
-				<option class="GHOSTColor" value="ghost"><fmt:message key="type.ghost"/></option>
-				<option class="DARKColor" value="dark"><fmt:message key="type.dark"/></option>
-				<option class="DRAGONColor" value="dragon"><fmt:message key="type.dragon"/></option>
-				<option class="STEELColor" value="steel"><fmt:message key="type.steel"/></option>
-				<option class="FAIRYColor" value="fairy"><fmt:message key="type.fairy"/></option>
-			</select>
-			<select class="col-auto btn btn-outline-dark" id="addType2" name="addType2">
-				<option class="${pkm.secondaryType}Color" value="${pkm.secondaryType}"></option>
-				<option class="NORMALColor" value="normal"><fmt:message key="type.normal"/></option>
-				<option class="FIREColor" value="fire"><fmt:message key="type.fire"/></option>
-				<option class="WATERColor" value="water"><fmt:message key="type.water"/></option>
-				<option class="GRASSColor" value="grass"><fmt:message key="type.grass"/></option>
-				<option class="ELECTRICColor" value="electric"><fmt:message key="type.electric"/></option>
-				<option class="ICEColor" value="ice"><fmt:message key="type.ice"/></option>
-				<option class="FIGHTINGColor" value="fighting"><fmt:message key="type.fighting"/></option>
-				<option class="POISONColor" value="poison"><fmt:message key="type.poison"/></option>
-				<option class="GROUNDColor" value="ground"><fmt:message key="type.ground"/></option>
-				<option class="FLYINGColor" value="flying"><fmt:message key="type.flying"/></option>
-				<option class="PSYCHICColor" value="psychic"><fmt:message key="type.psychic"/></option>
-				<option class="BUGColor" value="bug"><fmt:message key="type.bug"/></option>
-				<option class="ROCKColor" value="rock"><fmt:message key="type.rock"/></option>
-				<option class="GHOSTColor" value="ghost"><fmt:message key="type.ghost"/></option>
-				<option class="DARKColor" value="dark"><fmt:message key="type.dark"/></option>
-				<option class="DRAGONColor" value="dragon"><fmt:message key="type.dragon"/></option>
-				<option class="STEELColor" value="steel"><fmt:message key="type.steel"/></option>
-				<option class="FAIRYColor" value="fairy"><fmt:message key="type.fairy"/></option>
-			</select>
-		</div>
-		<div class="row m-3 justify-content-between">
-			<input class="col-auto btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="data.confirm"/>">
-			<a class="col-auto btn btn-outline-dark btn-sm" type="button" href="Servlet_pokedexList"><fmt:message key="data.cancel"/></a>
+	<form class="fst-italic" action="Servlet_pkmById" method="get">
+		<div class="row border border-2 border-danger rounded m-2 p-3">
+			<label class="col-auto" for="searchNatId"><fmt:message key="card.natID"/></label>
+			<input class="col-auto" type="text" id="searchNatId" name="searchNatId" value="${pkm.nationalDex}"/>
+			<input class="col-auto ms-2 btn btn-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
 		</div>
 	</form>
 
-</div>
+	<c:if test="${not empty pkm.nationalDex}">
+		<div>
+			<div class="pokedex">
+				<div class="pokedex-row">
+					<div class="pokedex-card">
+						<div class="pokedex-card-inner text-white">
+							<div class="pokedex-card-front">
+								<div class="container">
+									<div class="container-fluid mt-2">
+										<div><img src="resources/img/pkm/${pkm.nationalDex}.png" class="img-fluid"
+												  alt="Image Pokemon ${pkm.nationalDex}"></div>
+									</div>
+									<div class="h5" name="pkm-name">
+										${pkm.name}
+									</div>
+									<div>
+										<span class="badge rounded-pill ${pkm.primaryType}Color">${pkm.primaryType}</span>
+										<span class="badge rounded-pill ${pkm.secondaryType}Color">${pkm.secondaryType}</span>
+									</div>
+								</div>
+							</div>
+							<div class="pokedex-card-back">
+								<div class="container p-2">
+									<div class="h5 fw-bold text-dark" name="pkm-name">${pkm.name}</div>
+									<div class="h6 text-start">
+										<div>
+											<span><fmt:message key="card.natID"/> : </span>
+											<span class="fw-bold text-dark">${pkm.nationalDex}</span>
+										</div>
+										<div>
+											<span><fmt:message key="card.regID"/> : </span>
+											<span class="fw-bold text-dark">${pkm.regionalDex}</span>
+										</div>
+										<div class="mt-2">
+											<span><fmt:message key="card.weight"/> : </span>
+											<span class="fw-bold text-dark">${pkm.weight} <fmt:message key="card.kg"/></span>
+										</div>
+										<div>
+											<span><fmt:message key="card.height"/> : </span>
+											<span class="fw-bold text-dark">${pkm.height} <fmt:message key="card.m"/></span>
+										</div>
+										<div class="mt-2">
+											<span><fmt:message key="card.desc"/> : </span>
+											<span class="fst-italic text-dark pkmDesc">${pkm.description}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<form class="fst-italic" action="Servlet_deletePkm" method="get">
+				<div class="row m-3 fst-normal fw-bold">
+					<fmt:message key="data.deleteSentence"/> ${pkm.name} ?
+				</div>
+				<div class="row m-4 justify-content-evenly">
+					<input type="hidden" name="pkm-natDex" value="${pkm.nationalDex}">
+					<input class="col-auto btn btn-dark btn-sm" type="submit" value="<fmt:message key="data.yes"/>">
+					<a class="col-auto btn btn-dark btn-sm" type="button" href="Servlet_pokedexList">
+						<fmt:message key="data.no"/>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</c:if>
+
 </body>
 <footer>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="script/pokedex.js"></script>
 </html>

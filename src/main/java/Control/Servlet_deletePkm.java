@@ -15,8 +15,12 @@ public class Servlet_deletePkm extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        int nationalDex = Integer.parseInt(request.getParameter("pkm-natDex"));
 
+        PokemonDAO pokemonDAO = new PokemonDAO();
+        pokemonDAO.delete(nationalDex);
 
+        response.sendRedirect("Servlet_pokedexList");
     }
 
     @Override
