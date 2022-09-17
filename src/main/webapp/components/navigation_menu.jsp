@@ -1,8 +1,8 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<fmt:setLocale value="${sessionScope.lang}"/>
 <fmt:setBundle basename="Lang"/>
-<fmt:setLocale value="${sessionScope.Lang}"/>
-
 
 <div class="btn-group lang-group" role="group" aria-label="Basic example">
 	<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}/Servlet_i18n?lang=en_US&path=${pageContext.request.requestURI}"><fmt:message key="choice.english"/></a>

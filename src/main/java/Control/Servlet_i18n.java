@@ -7,6 +7,8 @@ import java.io.IOException;
 
 @WebServlet(name = "Servlet_i18n", value = "/Servlet_i18n")
 public class Servlet_i18n extends HttpServlet {
+
+    // changer de langue
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getParameter("path");
@@ -15,7 +17,7 @@ public class Servlet_i18n extends HttpServlet {
 
         String language = (String) session.getAttribute("lang");
         if (!(lang.equals(language))) {
-            session.setAttribute("Lang", lang);
+            session.setAttribute("lang", lang);
         }
 
         response.sendRedirect(path);

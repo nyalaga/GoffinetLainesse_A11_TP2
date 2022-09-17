@@ -4,7 +4,6 @@ import model.PkmType;
 import model.Pokemon;
 
 import javax.persistence.*;
-import java.lang.reflect.Method;
 import java.util.List;
 
 public class PokemonDAO implements ItemsDAO<Pokemon> {
@@ -201,6 +200,46 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        } finally {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            entityManager.close();
+        }
+    }
+
+    @Override
+    public void update(Pokemon pokemon) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+
+        try {
+            transaction.begin();
+            entityManager.merge(pokemon);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            entityManager.close();
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        Pokemon pokemon;
+
+        try {
+            transaction.begin();
+            pokemon = entityManager.find(Pokemon.class, id);
+            entityManager.remove(pokemon);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             if (transaction.isActive()) {
                 transaction.rollback();

@@ -1,8 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<fmt:setLocale value="${sessionScope.lang}"/>
 <fmt:setBundle basename="Lang"/>
-<fmt:setLocale value="${sessionScope.Lang}"/>
 
 <div class="pokedex">
     <div class="pokedex-row">
