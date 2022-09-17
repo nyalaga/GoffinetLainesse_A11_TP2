@@ -27,6 +27,7 @@ public class Servlet_pokedexList extends HttpServlet {
     // obtenir les données des Pokemon
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         HttpSession session = request.getSession();
 
         PokemonDAO pokemonDAO = new PokemonDAO();
@@ -35,7 +36,13 @@ public class Servlet_pokedexList extends HttpServlet {
 
         session.setAttribute("pkmList", pkmList);
 
-        response.sendRedirect("pokedex.jsp");
+        String dest = "";
+        if(pkmList == null || pkmList.isEmpty()) {
+            dest = "404.jsp";
+        } else {
+            dest = "pokedex.jsp";
+        }
+        response.sendRedirect(dest);
     }
 
     @Override

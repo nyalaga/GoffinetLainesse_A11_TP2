@@ -19,17 +19,14 @@ public class Servlet_pkmById extends HttpServlet {
 
         Pokemon pkm = pokemonDAO.findById(Id);
 
-        request.setAttribute("pkm", pkm);
-
-        String type1 = pkm.getPrimaryType().name();
-        request.setAttribute("type1", type1);
-
-        if (!(pkm.getSecondaryType() == null)) {
-            String type2 = pkm.getSecondaryType().name();
-            request.setAttribute("type2", type2);
+        String dest = "";
+        if(pkm == null) {
+            dest = "/404.jsp";
+        } else {
+            request.setAttribute("pkm", pkm);
+            dest = "/deleteForm.jsp";
         }
-
-        RequestDispatcher rd = request.getRequestDispatcher("deleteForm.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher(dest);
         rd.forward(request, response);
     }
 
