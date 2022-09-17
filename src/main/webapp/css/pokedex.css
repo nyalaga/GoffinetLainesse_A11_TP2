@@ -38,11 +38,11 @@ input[type="range"]::-ms-fill-upper {
     background-color: lightgrey;
 }
 
-.heightSlider {
+.width20 {
     width: 20px;
 }
 
-.weightSlider {
+.width40 {
     width: 40px;
 }
 

@@ -38,11 +38,11 @@
                                 </div>
                                 <div class="mt-2">
                                     <span><fmt:message key="card.weight"/> : </span>
-                                    <span class="fw-bold text-dark">${pkm.weight} kg</span>
+                                    <span class="fw-bold text-dark">${pkm.weight} <fmt:message key="card.kg"/></span>
                                 </div>
                                 <div>
                                     <span><fmt:message key="card.height"/> : </span>
-                                    <span class="fw-bold text-dark">${pkm.height} m</span>
+                                    <span class="fw-bold text-dark">${pkm.height} <fmt:message key="card.m"/></span>
                                 </div>
                                 <div class="mt-2">
                                     <span><fmt:message key="card.desc"/> : </span>

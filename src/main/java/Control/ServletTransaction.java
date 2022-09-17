@@ -30,7 +30,7 @@ public class ServletTransaction extends HttpServlet {
         HashSet<Pokemon> transactions = (HashSet<Pokemon>) session.getAttribute("transactions");
         for (Pokemon p : pkmList) {
             System.out.println(pkm + " with " + p.getName());
-            if (p.getName().strip().equalsIgnoreCase(pkm.strip())) {
+            if (p.getName().equalsIgnoreCase(pkm)) {
                 selectedPkm = p;
                 break;
             }

@@ -23,14 +23,14 @@
 	<div class="mt-2">
 		<form action="Servlet_filters" method="get">
 			<label class="fst-italic" for="partialName"><fmt:message key="search.name"/>  </label>
-			<input type="text" id="partialName" name="partialName">
+			<input class="m-1" type="text" id="partialName" name="partialName">
 			<input class="btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
 		</form>
 	</div>
 
 	<div class="mt-2">
 		<form action="Servlet_filters" method="get">
-			<label class="fst-italic" for="typeChoice"><fmt:message key="search.type"/>  </label>
+			<label class="m-1 fst-italic" for="typeChoice"><fmt:message key="search.type"/>  </label>
 			<select class="btn btn-outline-dark" id="typeChoice" name="typeChoice" onchange="this.form.submit()">
 				<option selected disabled><fmt:message key="type"/></option>
 				<option class="NORMALColor" value="normal"><fmt:message key="type.normal"/></option>
@@ -60,10 +60,10 @@
 			<label class="col-auto fst-italic" for="heightChoice"><fmt:message key="search.height"/>  </label>
 			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_m()">
 			<input class="col-auto" type="range" id="heightChoice" name="heightChoice" min="0" max="15" oninput="this.nextElementSibling.value">
-			<input readonly class="col-auto form-control-plaintext text-center heightSlider" type="text"  id="minHeightValue" name="minHeightValue">
+			<input readonly class="col-auto form-control-plaintext text-center width20" type="text"  id="minHeightValue" name="minHeightValue">
 			<label class="col-auto align-self-center" for="minHeightValue">-</label>
-			<input readonly class="col-auto form-control-plaintext text-center heightSlider" type="text"  id="maxHeightValue" name="maxHeightValue">
-			<label class="col-auto align-self-center" for="maxHeightValue">m </label>
+			<input readonly class="col-auto form-control-plaintext text-center width20" type="text"  id="maxHeightValue" name="maxHeightValue">
+			<label class="col-auto align-self-center" for="maxHeightValue"><fmt:message key="card.m"/> </label>
 			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_m()">
 			<input class="col-auto ms-2 btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
 		</form>
@@ -74,13 +74,22 @@
 			<label class="col-auto fst-italic" for="weightChoice"><fmt:message key="search.weight"/>  </label>
 			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_kg()">
 			<input class="col-auto" type="range" id="weightChoice" name="weightChoice" min="0" max="1400" oninput="this.nextElementSibling.value">
-			<input readonly class="col-auto form-control-plaintext text-center weightSlider" type="text"  id="minWeightValue" name="minWeightValue">
+			<input readonly class="col-auto form-control-plaintext text-center width40" type="text"  id="minWeightValue" name="minWeightValue">
 			<label class="col-auto align-self-center" for="minWeightValue">-</label>
-			<input readonly class="col-auto form-control-plaintext text-center weightSlider" type="text"  id="maxWeightValue" name="maxWeightValue">
-			<label class="col-auto align-self-center" for="maxWeightValue">kg </label>
+			<input readonly class="col-auto form-control-plaintext text-center width40" type="text"  id="maxWeightValue" name="maxWeightValue">
+			<label class="col-auto align-self-center" for="maxWeightValue"><fmt:message key="card.kg"/> </label>
 			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_kg()">
 			<input class="col-auto ms-2 btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
 		</form>
+	</div>
+
+	<div class="mt-5">
+		<select class="m-1 btn btn-outline-dark" id="dataMan" name="dataMan" onchange="followLink()">
+			<option selected disabled><fmt:message key="data.management"/></option>
+			<option class="" value="addForm.jsp"><fmt:message key="data.add"/></option>
+			<option class="" value="updateForm.jsp"><fmt:message key="data.update"/></option>
+			<option class="" value="deleteForm.jsp"><fmt:message key="data.delete"/></option>
+		</select>
 	</div>
 
 	<div class="checkoutZone">

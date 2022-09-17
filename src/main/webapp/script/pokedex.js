@@ -48,6 +48,12 @@ for (const card of pokedexCards) {
     })
 }
 
+// diriger la sélection vers la page
+function followLink() {
+    let link = document.getElementById("dataMan");
+    window.location = link.value;
+}
+
 // obtenir les valeurs dynamiques pour la glissière de la taille
 const heightRange = 1;
 let heightSlider = document.getElementById("heightChoice");
