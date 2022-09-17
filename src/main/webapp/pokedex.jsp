@@ -83,6 +83,10 @@
 		</form>
 	</div>
 
+	<div class="checkoutZone">
+		<a href="${pageContext.request.contextPath}/checkout.jsp" class="btn btn-outline-danger btn-menu btn-menu-disabled btn-checkout">Checkout Team</a>
+	</div>
+
 	<div>
 		<%@include file="components/pokedex_card.jsp"%>
 	</div>
@@ -92,5 +96,6 @@
 <footer>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="script/pokedex.js"></script>
 </html>

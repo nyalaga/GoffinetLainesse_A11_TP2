@@ -13,22 +13,25 @@
 	<title>My Team</title>
 </head>
 <body>
-<fmt:setBundle basename="Lang"/>
-<fmt:setLocale value="${sessionScope.Lang}"/>
-
-<div class="main-container">
-	<%@include file="components/navigation_menu.jsp"%>
-	<h1 class="page-name"><fmt:message key="title.team"/></h1>
-	<div class="team team-row col-12">
-		<c:forEach var="pkm" items="${sessionScope.team}">
-			<div class="team-pokeball">
-				<img class="pokemon" src="resources/img/${pkm.nationalDex}.png">
-				<img class="pokeball pkb-top" src="resources/img/pkb_top.png">
-				<img class="pokeball pkb-bottom" src="resources/img/pkb_bottom.png">
-			</div>
-		</c:forEach>
+	<fmt:setBundle basename="Lang"/>
+	<fmt:setLocale value="${sessionScope.Lang}"/>
+	<div class="main-container">
+		<%@include file="components/navigation_menu.jsp"%>
+		<h1 class="page-name"><fmt:message key="title.checkout"/></h1>
+		<div class="col-12">
+			<ul>
+				<c:forEach var="pkm" items="${sessionScope.transactions}">
+					<li>
+						<span>Adding to your team${pkm.name}</span>
+						<span><img src="resources/img/${pkm.nationalDex}.png"></span>
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
+		<div>
+			<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}/ServletCheckout">Confirm</a>
+		</div>
 	</div>
-</div>
 </body>
 <footer>
 </footer>

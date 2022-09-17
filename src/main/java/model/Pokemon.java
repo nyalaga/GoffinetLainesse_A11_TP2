@@ -3,6 +3,7 @@ package model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class Pokemon {
@@ -121,5 +122,18 @@ public class Pokemon {
                 ", primaryType=" + primaryType +
                 ", secondaryType=" + secondaryType +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pokemon pokemon = (Pokemon) o;
+        return getNationalDex() == pokemon.getNationalDex() && getRegionalDex() == pokemon.getRegionalDex() && getName().equals(pokemon.getName()) && getPrimaryType() == pokemon.getPrimaryType() && getSecondaryType() == pokemon.getSecondaryType();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNationalDex(), getRegionalDex(), getName(), getPrimaryType(), getSecondaryType());
     }
 }

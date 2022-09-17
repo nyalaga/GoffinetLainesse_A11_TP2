@@ -9,7 +9,7 @@
     input[type='range']::-webkit-slider-runnable-track {
         height: 10px;
         -webkit-appearance: none;
-        color: red;
+        color: #fd1c1d;
         margin-top: -1px;
     }
 
@@ -18,19 +18,19 @@
         -webkit-appearance: none;
         height: 10px;
         cursor: ew-resize;
-        box-shadow: -80px 0 0 80px red;
+        box-shadow: -80px 0 0 80px #fd1c1d;
     }
 }
 /* FireFox */
 input[type="range"]::-moz-range-progress {
-    background-color: red;
+    background-color: #fd1c1d;
 }
 input[type="range"]::-moz-range-track {
     background-color: lightgrey;
 }
 /* IE */
 input[type="range"]::-ms-fill-lower {
-    background-color: red;
+    background-color: #fd1c1d;
 }
 input[type="range"]::-ms-fill-upper {
     background-color: lightgrey;
@@ -74,7 +74,7 @@ input[type="range"]::-ms-fill-upper {
     height: 100%;
     border: 3px solid black;
     text-align: center;
-    transition: transform 1s;
+    transition: transform 0.5s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
@@ -93,7 +93,7 @@ input[type="range"]::-ms-fill-upper {
 }
 
 .pokedex-card-back {
-    background-color: red;
+    background-color: #fd1c1d;
     transform: rotateY(180deg);
 }
 
@@ -128,6 +128,14 @@ input[type="range"]::-ms-fill-upper {
     overflow: hidden;
     width: 210px;
     height: 96px;
+}
+
+.selected {
+    border: 5px solid green;
+}
+
+.removed {
+    border: 5px solid #fd1c1d;
 }
 
 .heightSlider {

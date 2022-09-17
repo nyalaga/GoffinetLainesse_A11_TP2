@@ -1,4 +1,5 @@
 const pokedexCards = document.querySelectorAll(".pokedex-card-inner");
+const btnCheckout = document.querySelector(".btn-checkout");
 
 for (const card of pokedexCards) {
     card.addEventListener("mouseover", evt => {
@@ -14,6 +15,35 @@ for (const card of pokedexCards) {
         c.classList.remove("animatePokedexCardExpand")
         //Add the open animation classes
         c.classList.add("animatePokedexCardShrink");
+    })
+    const arrayOfChildren = Array.from(card.children);
+    arrayOfChildren.forEach((item) => {
+        item.addEventListener("click", evt => {
+            let classes = card.classList
+            let pkm = card.querySelector("[name=pkm-name]")
+            console.log(pkm.textContent.trim())
+                $.get("ServletTransaction?pkm=" + pkm.textContent.trim() + "&sel=" + classes.contains("selected")).done(function (data) {
+                    console.log(data, typeof data)
+                    const answer = JSON.parse(data);
+                    console.log(answer, typeof answer)
+                    let isTrue = answer.isAdded;
+                    let isEmpty = answer.isEmpty;
+                    console.log(isTrue, typeof isTrue)
+                    if (isTrue) {
+                        classes.add("selected");
+                    } else if (!isTrue) {
+                        classes.remove("selected");
+                    } else {
+                        console.warn("Returned data isn't 0 or 1")
+                    }
+                    if (isEmpty) {
+                        btnCheckout.classList.add("btn-menu-disabled")
+                    } else {
+                        btnCheckout.classList.remove("btn-menu-disabled")
+                    }
+                })
+            //}
+        })
     })
 }
 

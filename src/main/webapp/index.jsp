@@ -17,7 +17,7 @@
 
 <div class="main-container">
     <%@include file="components/navigation_menu.jsp"%>
-    <h4 class="page-name p-3 fst-italic"><fmt:message key="welcome"/></h4>
+    <h4 class="page-name p-3"><fmt:message key="welcome"/></h4>
 </div>
 <div class="main-container">
     <img src="resources/img/Pokemons.png" class="rounded-3 img-fluid" alt="Image d'accueil">
