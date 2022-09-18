@@ -27,12 +27,12 @@
 		<div class="row m-1">
 			<label class="col-auto" for="addNatId"><fmt:message key="card.natID"/></label>
 			<span class="col-auto text-danger">*  </span>
-			<input class="col-auto" type="text" id="addNatId" name="addNatId"/>
+			<input class="col-2" type="text" id="addNatId" name="addNatId"/>
 		</div>
 		<div class="row m-1">
 			<label class="col-auto" for="addRegId"><fmt:message key="card.regID"/></label>
 			<span class="col-auto text-danger">*  </span>
-			<input class="col-auto" type="text" id="addRegId" name="addRegId"/>
+			<input class="col-2" type="text" id="addRegId" name="addRegId"/>
 		</div>
 		<div class="row m-1">
 			<label class="col-auto" for="addName"><fmt:message key="card.name"/></label>

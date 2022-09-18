@@ -39,34 +39,39 @@
 			<div class="row m-1">
 				<label class="col-auto" for="updateNatId"><fmt:message key="card.natID"/></label>
 				<span class="col-auto text-danger">*  </span>
-				<input class="col-auto" type="text" id="updateNatId" name="updateNatId" value="${pkm.nationalDex}"/>
+				<input class="col-2" type="text" id="updateNatId" name="updateNatId" value="${pkm.nationalDex}"/>
 			</div>
 			<div class="row m-1">
 				<label class="col-auto" for="updateRegId"><fmt:message key="card.regID"/></label>
-				<input class="col-auto" type="text" id="updateRegId" name="updateRegId" value="${pkm.regionalDex}"/>
+				<span class="col-auto text-danger">*  </span>
+				<input class="col-2" type="text" id="updateRegId" name="updateRegId" value="${pkm.regionalDex}"/>
 			</div>
 			<div class="row m-1">
 				<label class="col-auto" for="updateName"><fmt:message key="card.name"/></label>
+				<span class="col-auto text-danger">*  </span>
 				<input class="col-auto" type="text" id="updateName" name="updateName" value="${pkm.name}"/>
 			</div>
 			<div class="row m-1">
 				<label class="col-auto" for="updateWeight"><fmt:message key="card.weight"/></label>
+				<span class="col-auto text-danger">*  </span>
 				<input class="col-2" type="text" id="updateWeight" name="updateWeight" value="${pkm.weight}"/>
 				<span class="col-auto"><fmt:message key="card.kg"/></span>
 			</div>
 			<div class="row m-1">
 				<label class="col-auto" for="updateHeight"><fmt:message key="card.height"/></label>
+				<span class="col-auto text-danger">*  </span>
 				<input class="col-2" type="text" id="updateHeight" name="updateHeight" value="${pkm.height}"/>
 				<span class="col-auto"><fmt:message key="card.m"/></span>
 			</div>
 			<div class="row m-1">
 				<label class="col-auto" for="updateDesc"><fmt:message key="card.desc"/></label>
 				<span class="col-auto"> (<fmt:message key="data.100char"/>)</span>
+				<span class="col-auto text-danger">*  </span>
 				<textarea class="col-auto" id="updateDesc" name="updateDesc" rows="3" cols="25">${pkm.description}</textarea>
 			</div>
-
 			<div class="row m-1">
 				<label class="col-auto fst-italic" for="updateType1"><fmt:message key="types"/></label>
+				<span class="col-auto text-danger">*  </span>
 				<select class="col-auto btn btn-outline-dark me-1" id="updateType1" name="updateType1">
 					<option class="NORMALColor" value="normal"
 							<c:if test="${pkm.primaryType == PkmType.NORMAL}">selected</c:if>>
