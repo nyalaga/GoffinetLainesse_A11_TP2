@@ -38,7 +38,7 @@ public class Servlet_pokedexList extends HttpServlet {
 
         String dest = "";
         if(pkmList == null || pkmList.isEmpty()) {
-            dest = "404.jsp";
+            dest = "error.jsp";
         } else {
             dest = "pokedex.jsp";
         }

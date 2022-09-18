@@ -26,6 +26,7 @@
 		<div class="row border border-2 border-danger rounded m-2 p-3">
 			<label class="col-auto" for="searchNatId"><fmt:message key="card.natID"/></label>
 			<input class="col-auto" type="text" id="searchNatId" name="searchNatId" value="${pkm.nationalDex}"/>
+			<input type="hidden" name="path" value="${pageContext.request.requestURI}"/>
 			<input class="col-auto ms-2 btn btn-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
 		</div>
 	</form>

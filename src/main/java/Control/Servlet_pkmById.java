@@ -12,6 +12,7 @@ import java.io.IOException;
 public class Servlet_pkmById extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String currentPage = request.getParameter("path");
 
         int Id = Integer.parseInt(request.getParameter("searchNatId"));
 
@@ -21,10 +22,10 @@ public class Servlet_pkmById extends HttpServlet {
 
         String dest = "";
         if(pkm == null) {
-            dest = "/404.jsp";
+            dest = "/error.jsp";
         } else {
             request.setAttribute("pkm", pkm);
-            dest = "/deleteForm.jsp";
+            dest = currentPage.substring(currentPage.lastIndexOf("/"));
         }
         RequestDispatcher rd = request.getRequestDispatcher(dest);
         rd.forward(request, response);
