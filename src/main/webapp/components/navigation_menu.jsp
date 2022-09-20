@@ -16,5 +16,4 @@
 	<a class="btn btn-outline-danger btn-menu" href="index.jsp"><fmt:message key="nav.home"/></a>
 	<a class="btn btn-outline-danger btn-menu" href="Servlet_pokedexList"><fmt:message key="nav.pokedex"/></a>
 	<a class="btn btn-outline-danger btn-menu" href="team.jsp"><fmt:message key="nav.team"/></a>
-	<a class="btn btn-outline-danger btn-menu" href="stats.jsp"><fmt:message key="nav.stat"/></a>
 </div>

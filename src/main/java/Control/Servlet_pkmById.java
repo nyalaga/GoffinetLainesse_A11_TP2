@@ -12,21 +12,21 @@ import java.io.IOException;
 public class Servlet_pkmById extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String currentPage = request.getParameter("path");
-
+        // Récupération de l'id du Pokemon
         int Id = Integer.parseInt(request.getParameter("searchNatId"));
 
         PokemonDAO pokemonDAO = new PokemonDAO();
 
         Pokemon pkm = pokemonDAO.findById(Id);
 
-        String dest = "";
-        if(pkm == null) {
-            dest = "/error.jsp";
-        } else {
+        String dest;
+        if(pkm == null) { // si le Pokemon n'est pas trouvé
+            dest = "/error.jsp"; // afficher la page "aucun Pokemon trouvé"
+        } else { // sinon renvoyer le Pokemon
             request.setAttribute("pkm", pkm);
-            dest = currentPage.substring(currentPage.lastIndexOf("/"));
+            dest = "/" + request.getParameter("dest");
         }
+
         RequestDispatcher rd = request.getRequestDispatcher(dest);
         rd.forward(request, response);
     }

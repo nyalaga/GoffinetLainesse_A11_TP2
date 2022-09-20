@@ -9,16 +9,27 @@ import java.util.Objects;
 public class Pokemon {
 
     @Id
-    @Column(name = "national_dex")
+    @Column(name = "national_dex", length = 4)
     private int nationalDex;
-    @Column(name = "regional_dex")
+
+    @Column(name = "regional_dex", nullable = false, length = 4)
     private int regionalDex;
+
+    @Column(nullable = false, length = 25)
     private String name;
+
+    @Column(nullable = false, length = 7)
     private double weight;
+
+    @Column(nullable = false, length = 5)
     private double height;
+
+    @Column(nullable = false, length = 100)
     private String description;
-    @Column(name = "primary_type")
+
+    @Column(name = "primary_type", nullable = false)
     private PkmType primaryType;
+
     @Column(name = "secondary_type")
     private PkmType secondaryType;
 
