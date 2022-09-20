@@ -22,12 +22,21 @@ public class ServletTransaction extends HttpServlet {
         HttpSession session = req.getSession();
         Pokemon selectedPkm = null;
         List<Pokemon> pkmList = (List<Pokemon>) session.getAttribute("pkmList");
-
-        System.out.println(session.getAttribute("transaction"));
-        if (session.getAttribute("transactions") == null) {
-            session.setAttribute("transactions", new HashSet<Pokemon>());
+        HashSet<Pokemon> team = (HashSet<Pokemon>) session.getAttribute("team");
+        if (team == null) {
+            team = new HashSet<>();
         }
-        HashSet<Pokemon> transactions = (HashSet<Pokemon>) session.getAttribute("transactions");
+
+        System.out.println(session.getAttribute("transactionsAdded"));
+        if (session.getAttribute("transactionsAdded") == null) {
+            session.setAttribute("transactionsAdded", new HashSet<Pokemon>());
+        }
+        System.out.println(session.getAttribute("transactionsRemoved"));
+        if (session.getAttribute("transactionsRemoved") == null) {
+            session.setAttribute("transactionsRemoved", new HashSet<Pokemon>());
+        }
+        HashSet<Pokemon> transactionsAdded = (HashSet<Pokemon>) session.getAttribute("transactionsAdded");
+        HashSet<Pokemon> transactionsRemoved = (HashSet<Pokemon>) session.getAttribute("transactionsRemoved");
         for (Pokemon p : pkmList) {
             System.out.println(pkm + " with " + p.getName());
             if (p.getName().strip().equalsIgnoreCase(pkm.strip())) {
@@ -35,10 +44,21 @@ public class ServletTransaction extends HttpServlet {
                 break;
             }
         }
-        boolean isAdded = updateTransaction(selectedPkm, transactions);
+        boolean isAdded = false;
+        boolean isRemoved = false;
+        if (team.contains(selectedPkm) && !selected) {
+            isAdded = true;
+            updateTransaction(selectedPkm, transactionsRemoved);
+        } else if (!selected) {
+            isAdded = updateTransaction(selectedPkm, transactionsAdded);
+        } else {
+            isRemoved = updateTransaction(selectedPkm, transactionsRemoved);
+        }
         JSONObject answer = new JSONObject();
         answer.put("isAdded", isAdded);
-        answer.put("isEmpty", transactions.isEmpty());
+        answer.put("isRemoved", isRemoved);
+        answer.put("isAddedEmpty", transactionsAdded.isEmpty());
+        answer.put("isRemovedEmpty", transactionsRemoved.isEmpty());
         System.out.println(answer);
         writer.print(answer.toJSONString());
     }

@@ -27,23 +27,23 @@ for (const card of pokedexCards) {
                     console.log(data, typeof data)
                     const answer = JSON.parse(data);
                     console.log(answer, typeof answer)
-                    let isTrue = answer.isAdded;
-                    let isEmpty = answer.isEmpty;
-                    console.log(isTrue, typeof isTrue)
-                    if (isTrue) {
+                    let isAdded = answer.isAdded;
+                    let isAddedEmpty = answer.isAddedEmpty;
+                    let isRemoved = answer.isRemoved;
+                    let isRemovedEmpty = answer.isRemovedEmpty;
+                    if (isAdded === true) {
                         classes.add("selected");
-                    } else if (!isTrue) {
+                    } else if (isRemoved === true) {
                         classes.remove("selected");
                     } else {
                         console.warn("Returned data isn't 0 or 1")
                     }
-                    if (isEmpty) {
+                    if (isAddedEmpty === true && isRemovedEmpty === true) {
                         btnCheckout.classList.add("btn-menu-disabled")
                     } else {
                         btnCheckout.classList.remove("btn-menu-disabled")
                     }
                 })
-            //}
         })
     })
 }

@@ -8,7 +8,7 @@
     <div class="pokedex-row">
         <c:forEach var="pkm" items="${sessionScope.pkmList}">
             <div class="pokedex-card">
-                <div class="pokedex-card-inner text-white">
+                <div class="pokedex-card-inner text-white ${sessionScope.team.contains(pkm) ? "selected" : ""}">
                     <div class="pokedex-card-front">
                         <div class="container">
                             <div class="container-fluid mt-2">
