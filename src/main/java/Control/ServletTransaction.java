@@ -48,11 +48,11 @@ public class ServletTransaction extends HttpServlet {
         boolean isRemoved = false;
         if (team.contains(selectedPkm) && !selected) {
             isAdded = true;
-            updateTransaction(selectedPkm, transactionsRemoved);
+            updateTransaction(selectedPkm, transactionsAdded, transactionsRemoved, team, false);
         } else if (!selected) {
-            isAdded = updateTransaction(selectedPkm, transactionsAdded);
+            isAdded = updateTransaction(selectedPkm, transactionsAdded, transactionsRemoved, team, false);
         } else {
-            isRemoved = updateTransaction(selectedPkm, transactionsRemoved);
+            isRemoved = updateTransaction(selectedPkm, transactionsAdded, transactionsRemoved, team, true);
         }
         JSONObject answer = new JSONObject();
         answer.put("isAdded", isAdded);
@@ -73,14 +73,32 @@ public class ServletTransaction extends HttpServlet {
 
     }
 
-    private boolean updateTransaction(Pokemon pokemon, HashSet<Pokemon> transactions) {
-        if (transactions.size() == 6) {
+    private boolean updateTransaction(Pokemon pokemon, HashSet<Pokemon> transactionsAdded, HashSet<Pokemon>  transactionsRemoved, HashSet<Pokemon> team, boolean isRemove) {
+        if ((transactionsAdded.size() + team.size() - transactionsRemoved.size()) == 6 && !isRemove) {
             return false;
         }
-        if (!transactions.add(pokemon)) {
-            transactions.remove(pokemon);
-            return false;
+        // TEST NEW WAY
+        if (isRemove) {
+            if (team.contains(pokemon)) {
+                transactionsRemoved.add(pokemon);
+            } else if (transactionsAdded.contains(pokemon)){
+                    transactionsAdded.remove(pokemon);
+                } else {
+                    transactionsAdded.remove(pokemon);
+                    transactionsRemoved.add(pokemon);
+                }
+            } else {
+            if (team.contains(pokemon)) {
+                transactionsRemoved.remove(pokemon);
+                return false;
+            } else if (transactionsRemoved.contains(pokemon)) {
+                transactionsRemoved.remove(pokemon);
+            } else {
+                transactionsRemoved.remove(pokemon);
+                transactionsAdded.add(pokemon);
+            }
         }
+
         return true;
     }
 

@@ -20,10 +20,18 @@
 		<h1 class="page-name"><fmt:message key="title.checkout"/></h1>
 		<div class="col-12">
 			<ul>
-				<c:forEach var="pkm" items="${sessionScope.transactions}">
+				<c:forEach var="pkm" items="${sessionScope.transactionsAdded}">
 					<li>
-						<span>Adding to your team${pkm.name}</span>
-						<span><img src="resources/img/${pkm.nationalDex}.png"></span>
+						<span>Adding to your team: ${pkm.name}</span>
+						<span><img src="resources/img/pkm/${pkm.nationalDex}.png"></span>
+					</li>
+				</c:forEach>
+			</ul>
+			<ul>
+				<c:forEach var="pkm" items="${sessionScope.transactionsRemoved}">
+					<li>
+						<span>Removing from your team: ${pkm.name}</span>
+						<span><img src="resources/img/pkm/${pkm.nationalDex}.png"></span>
 					</li>
 				</c:forEach>
 			</ul>
