@@ -21,7 +21,7 @@ public class Servlet_pkmById extends HttpServlet {
 
         String dest;
         if(pkm == null) { // si le Pokemon n'est pas trouvé
-            dest = "/error.jsp"; // afficher la page "aucun Pokemon trouvé"
+            dest = "/errorPkmNotFound.jsp"; // afficher la page "aucun Pokemon trouvé"
         } else { // sinon renvoyer le Pokemon
             request.setAttribute("pkm", pkm);
             dest = "/" + request.getParameter("dest");

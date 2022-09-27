@@ -7,20 +7,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=500px, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="webjars/bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <title>404</title>
-    <link rel="stylesheet" href="css/404.css">
 </head>
 <body class="main-container">
 
 <fmt:setLocale value="${sessionScope.lang}"/>
 <fmt:setBundle basename="Lang"/>
 
-<h1 class="p-2"><fmt:message key="error"/></h1>
+<h1 class="p-2"><fmt:message key="error.500"/></h1>
 <div class="row justify-content-md-center w-75">
     <img src="resources/img/missingno.jpg" alt="MISSINGNO">
 </div>
-<a class="btn-menu p-2 m-3 text-decoration-none fw-bold" href="Servlet_pokedexList"><fmt:message key="title.pokedex"/></a>
+<a class="btn-menu p-2 m-3 text-decoration-none fw-bold" href="index.jsp"><fmt:message key="nav.home"/></a>
 </body>
 </html>
