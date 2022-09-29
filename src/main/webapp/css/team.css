@@ -9,29 +9,26 @@
 }
 
 .team-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10%;
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 250px 250px;
     width: 100%;
     height: 520px;
 }
 
 .team-pokeball {
-    flex: 1 0 32%;
-    position: relative;
-    width: 25%;
-    height: 130px;
+    width: 200px;
+    height: 200px;
 }
 
 @keyframes pokeballBottomOpen {
-    0% {margin-top: 39%}
-    100% {margin-top: 76%}
+    0% {margin-top: 7%}
+    100% {margin-top: 12%}
 }
 
 @keyframes pokeballBottomClose {
-    0% {margin-top: 76%}
-    100% {margin-top: 39%}
+    0% {margin-top: 12%}
+    100% {margin-top: 7%}
 }
 
 @keyframes pokeballPokemonOpen {
@@ -88,14 +85,14 @@
 }
 
 .pkb-top {
-    width: 100%;
+    width: 200px;
     position: absolute;
     z-index: 1;
 }
 
 .pkb-bottom {
-    width: 100%;
-    margin-top: 39%;
+    width: 200px;
+    margin-top: 7%;
     position: absolute;
     z-index: 1;
 }
@@ -119,7 +116,7 @@
 }
 
 .pokemon {
-    width: 100%;
+    width: 200px;
     padding: 10%;
     position: absolute;
     z-index: 0;
