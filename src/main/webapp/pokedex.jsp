@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=500px, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="webjars/bootstrap/5.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/pokedex.css">
 	<title>Pokedex</title>
@@ -86,7 +86,7 @@
 	<div class="mt-5">
 		<select class="m-1 btn btn-outline-dark" id="dataMan" name="dataMan" onchange="followLink()">
 			<option selected disabled><fmt:message key="data.management"/></option>
-			<option class="" value="addForm.jsp"><fmt:message key="data.add"/></option>
+			<option class="" value="saveForm.jsp"><fmt:message key="data.add"/></option>
 			<option class="" value="updateForm.jsp"><fmt:message key="data.update"/></option>
 			<option class="" value="deleteForm.jsp"><fmt:message key="data.delete"/></option>
 		</select>
@@ -105,7 +105,7 @@
 </body>
 <footer>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="script/pokedex.js"></script>
 </html>

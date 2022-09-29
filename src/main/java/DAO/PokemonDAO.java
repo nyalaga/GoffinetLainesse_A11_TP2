@@ -12,7 +12,7 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
             Persistence.createEntityManagerFactory("hibernate");
 
     /**
-     * Sauvegarder un Pokemon dans la bd
+     * Sauvegarder un Pokemon dans la BD
      * @param pokemon l'objet Pokemon
      */
     @Override
@@ -208,6 +208,10 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
         }
     }
 
+    /**
+     * Sauvegarder les modifications d'un Pokemon dans la BD
+     * @param pokemon l'objet Pokemon
+     */
     @Override
     public void update(Pokemon pokemon) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -227,6 +231,10 @@ public class PokemonDAO implements ItemsDAO<Pokemon> {
         }
     }
 
+    /**
+     * Supprimer un Pokemon de la BD
+     * @param id du Pokemon à supprimer
+     */
     @Override
     public void delete(int id) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();

@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=500px, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="webjars/bootstrap/5.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/pokedex.css">
 	<title>Delete form</title>
@@ -26,7 +26,7 @@
 		<div class="row border border-2 border-danger rounded m-2 p-3">
 			<label class="col-auto" for="searchNatId"><fmt:message key="card.natID"/></label>
 			<input class="col-auto" type="text" id="searchNatId" name="searchNatId" value="${pkm.nationalDex}"/>
-			<input type="hidden" name="path" value="${pageContext.request.requestURI}"/>
+			<input type="hidden" name="dest" value="deleteForm.jsp"/>
 			<input class="col-auto ms-2 btn btn-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
 		</div>
 	</form>
@@ -103,7 +103,7 @@
 </body>
 <footer>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="script/pokedex.js"></script>
 </html>
