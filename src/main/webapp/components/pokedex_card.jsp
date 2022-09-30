@@ -15,7 +15,7 @@
                                 <div><img src="resources/img/pkm/${pkm.nationalDex}.png" class="img-fluid"
                                           alt="Image Pokemon ${pkm.nationalDex}"></div>
                             </div>
-                            <div class="h5">
+                            <div class="h5" name="pkm-name">
                                     ${pkm.name}
                             </div>
                             <div>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="pokedex-card-back">
                         <div class="container p-2">
-                            <div class="h5 fw-bold text-dark">${pkm.name}</div>
+                            <div class="h5 fw-bold text-dark" name="pkm-name">${pkm.name}</div>
                             <div class="h6 text-start">
                                 <div>
                                     <span><fmt:message key="card.natID"/> : </span>
