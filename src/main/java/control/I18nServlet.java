@@ -1,6 +1,5 @@
 package control;
 
-import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
@@ -10,7 +9,7 @@ public class I18nServlet extends HttpServlet {
 
     // changer de langue
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String path = request.getParameter("path");
         String lang = request.getParameter("lang");
         HttpSession session = request.getSession();
@@ -21,10 +20,5 @@ public class I18nServlet extends HttpServlet {
         }
 
         response.sendRedirect(path);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

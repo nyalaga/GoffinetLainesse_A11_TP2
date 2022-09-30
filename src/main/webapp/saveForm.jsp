@@ -231,7 +231,7 @@
 			</div>
 			<div class="row m-4 justify-content-evenly">
 				<input class="col-auto btn btn-dark btn-sm" type="submit" value="<fmt:message key="data.confirm"/>">
-				<a class="col-auto btn btn-dark btn-sm" type="button" href="PokedexListServletokedexList">
+				<a class="col-auto btn btn-dark btn-sm" type="button" href="PokedexListServlet">
 					<fmt:message key="data.cancel"/>
 				</a>
 			</div>
@@ -253,18 +253,22 @@
 										<div><img src="resources/img/pkm/${pkm0.nationalDex}.png" class="img-fluid"
 												  alt="Image Pokemon ${pkm0.nationalDex}"></div>
 									</div>
-									<div class="h5" name="pkm-name">
+									<div class="h5">
 											${pkm0.name}
 									</div>
 									<div>
-										<span class="badge rounded-pill ${pkm0.primaryType}Color">${pkm0.primaryType}</span>
-										<span class="badge rounded-pill ${pkm0.secondaryType}Color">${pkm0.secondaryType}</span>
+										<span class="badge rounded-pill ${pkm0.primaryType}Color">
+												${pkm0.primaryType}
+										</span>
+										<span class="badge rounded-pill ${pkm0.secondaryType}Color">
+												${pkm0.secondaryType}
+										</span>
 									</div>
 								</div>
 							</div>
 							<div class="pokedex-card-back">
 								<div class="container p-2">
-									<div class="h5 fw-bold text-dark" name="pkm-name">${pkm0.name}</div>
+									<div class="h5 fw-bold text-dark">${pkm0.name}</div>
 									<div class="h6 text-start">
 										<div>
 											<span><fmt:message key="card.natID"/> : </span>
@@ -276,11 +280,15 @@
 										</div>
 										<div class="mt-2">
 											<span><fmt:message key="card.weight"/> : </span>
-											<span class="fw-bold text-dark">${pkm0.weight} <fmt:message key="card.kg"/></span>
+											<span class="fw-bold text-dark">
+													${pkm0.weight} <fmt:message key="card.kg"/>
+											</span>
 										</div>
 										<div>
 											<span><fmt:message key="card.height"/> : </span>
-											<span class="fw-bold text-dark">${pkm0.height} <fmt:message key="card.m"/></span>
+											<span class="fw-bold text-dark">
+													${pkm0.height} <fmt:message key="card.m"/>
+											</span>
 										</div>
 										<div class="mt-2">
 											<span><fmt:message key="card.desc"/> : </span>
@@ -307,7 +315,7 @@
 					<input type="hidden" name="type1" value="${pkm.primaryType}">
 					<input type="hidden" name="type2" value="${pkm.secondaryType}">
 					<input class="col-auto btn btn-dark btn-sm" type="submit" value="<fmt:message key="data.yes"/>">
-					<a class="col-auto btn btn-dark btn-sm" type="button" href="PokedexListServletokedexList">
+					<a class="col-auto btn btn-dark btn-sm" type="button" href="PokedexListServlet">
 						<fmt:message key="data.no"/>
 					</a>
 				</div>
@@ -319,6 +327,7 @@
 <footer>
 </footer>
 <script src="webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+		integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="script/pokedex.js"></script>
 </html>

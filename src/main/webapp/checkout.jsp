@@ -22,22 +22,22 @@
 			<ul>
 				<c:forEach var="pkm" items="${sessionScope.transactionsAdded}">
 					<li>
-						<span>Adding to your team: ${pkm.name}</span>
-						<span><img class="pkm-img-checkout" src="resources/img/pkm/${pkm.nationalDex}.png"></span>
+						<span><fmt:message key="team.add"/> : ${pkm.name}</span>
+						<span><img class="pkm-img-checkout" alt="Pokemon image" src="resources/img/pkm/${pkm.nationalDex}.png"></span>
 					</li>
 				</c:forEach>
 			</ul>
 			<ul>
 				<c:forEach var="pkm" items="${sessionScope.transactionsRemoved}">
 					<li>
-						<span>Removing from your team: ${pkm.name}</span>
-						<span><img class="pkm-img-checkout" src="resources/img/pkm/${pkm.nationalDex}.png"></span>
+						<span><fmt:message key="team.remove"/> : ${pkm.name}</span>
+						<span><img class="pkm-img-checkout" alt="Pokemon image" src="resources/img/pkm/${pkm.nationalDex}.png"></span>
 					</li>
 				</c:forEach>
 			</ul>
 		</div>
 		<div>
-			<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}/CheckoutServlet">Confirm</a>
+			<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}/CheckoutServlet"><fmt:message key="data.confirm"/></a>
 		</div>
 	</div>
 </body>

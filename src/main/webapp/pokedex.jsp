@@ -59,10 +59,13 @@
 		<form class="row" action="FiltersServlet" method="get">
 			<label class="col-auto fst-italic" for="heightChoice"><fmt:message key="search.height"/>  </label>
 			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_m()">
-			<input class="col-auto" type="range" id="heightChoice" name="heightChoice" min="0" max="15" oninput="this.nextElementSibling.value">
-			<input readonly class="col-auto form-control-plaintext text-center width20" type="text"  id="minHeightValue" name="minHeightValue">
+			<input class="col-auto" type="range" id="heightChoice" name="heightChoice" min="0" max="15"
+				   oninput="this.nextElementSibling.value">
+			<input readonly class="col-auto form-control-plaintext text-center width20" type="text"
+				   id="minHeightValue" name="minHeightValue">
 			<label class="col-auto align-self-center" for="minHeightValue">-</label>
-			<input readonly class="col-auto form-control-plaintext text-center width20" type="text"  id="maxHeightValue" name="maxHeightValue">
+			<input readonly class="col-auto form-control-plaintext text-center width20" type="text"
+				   id="maxHeightValue" name="maxHeightValue">
 			<label class="col-auto align-self-center" for="maxHeightValue"><fmt:message key="card.m"/> </label>
 			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_m()">
 			<input class="col-auto ms-2 btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
@@ -72,11 +75,15 @@
 	<div class="mt-2">
 		<form class="row" action="FiltersServlet" method="get">
 			<label class="col-auto fst-italic" for="weightChoice"><fmt:message key="search.weight"/>  </label>
-			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_kg()">
-			<input class="col-auto" type="range" id="weightChoice" name="weightChoice" min="0" max="1400" oninput="this.nextElementSibling.value">
-			<input readonly class="col-auto form-control-plaintext text-center width40" type="text"  id="minWeightValue" name="minWeightValue">
+			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="-"
+				   onclick="subtract_one_kg()">
+			<input class="col-auto" type="range" id="weightChoice" name="weightChoice" min="0" max="1400"
+				   oninput="this.nextElementSibling.value">
+			<input readonly class="col-auto form-control-plaintext text-center width40" type="text"
+				   id="minWeightValue" name="minWeightValue">
 			<label class="col-auto align-self-center" for="minWeightValue">-</label>
-			<input readonly class="col-auto form-control-plaintext text-center width40" type="text"  id="maxWeightValue" name="maxWeightValue">
+			<input readonly class="col-auto form-control-plaintext text-center width40" type="text"
+				   id="maxWeightValue" name="maxWeightValue">
 			<label class="col-auto align-self-center" for="maxWeightValue"><fmt:message key="card.kg"/> </label>
 			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="+" onclick="add_one_kg()">
 			<input class="col-auto ms-2 btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
@@ -93,7 +100,8 @@
 	</div>
 
 	<div class="checkoutZone">
-		<a href="${pageContext.request.contextPath}/checkout.jsp" class="btn btn-outline-danger btn-menu btn-menu-disabled btn-checkout">Checkout Team</a>
+		<a href="${pageContext.request.contextPath}/checkout.jsp"
+		   class="btn btn-outline-danger btn-menu btn-menu-disabled btn-checkout"><fmt:message key="team.checkout"/></a>
 	</div>
 
 	<div>
@@ -106,6 +114,7 @@
 <footer>
 </footer>
 <script src="webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+		integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="script/pokedex.js"></script>
 </html>

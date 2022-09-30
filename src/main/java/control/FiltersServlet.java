@@ -23,24 +23,24 @@ public class FiltersServlet extends HttpServlet {
         List<String> parameterNames = new ArrayList<>(request.getParameterMap().keySet());
 
         for (String param: parameterNames) {
-            switch(param) {
-                case "partialName":
+            switch (param) {
+                case "partialName" -> {
                     String partialName = request.getParameter("partialName");
                     pkmList = pokemonDAO.findByPartialName(partialName);
-                    break;
-                case "typeChoice":
+                }
+                case "typeChoice" -> {
                     PkmType type = PkmType.valueOf(request.getParameter("typeChoice").toUpperCase(Locale.ROOT));
                     pkmList = pokemonDAO.getByType(type);
-                    break;
-                case "heightChoice":
+                }
+                case "heightChoice" -> {
                     double height = Double.parseDouble(request.getParameter("heightChoice"));
                     pkmList = pokemonDAO.getByHeight(height);
-                    break;
-                case "weightChoice":
+                }
+                case "weightChoice" -> {
                     double minWeight = Double.parseDouble(request.getParameter("minWeightValue"));
                     double maxWeight = Double.parseDouble(request.getParameter("maxWeightValue"));
                     pkmList = pokemonDAO.getByWeight(minWeight, maxWeight);
-                    break;
+                }
             }
         }
 
@@ -53,10 +53,5 @@ public class FiltersServlet extends HttpServlet {
         }
         RequestDispatcher rd = request.getRequestDispatcher(dest);
         rd.forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

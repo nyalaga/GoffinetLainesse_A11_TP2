@@ -2,7 +2,6 @@ package control;
 
 import model.Pokemon;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +14,7 @@ import java.util.HashSet;
 public class CheckoutServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession();
         HashSet<Pokemon> checkoutAdded = (HashSet<Pokemon>) session.getAttribute("transactionsAdded");
         HashSet<Pokemon> checkoutRemoved = (HashSet<Pokemon>) session.getAttribute("transactionsRemoved");

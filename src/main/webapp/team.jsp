@@ -23,9 +23,9 @@
 	<div class="team team-row col-12">
 		<c:forEach var="pkm" items="${sessionScope.team}">
 			<div class="team-pokeball">
-				<img class="pokemon" src="resources/img/pkm/${pkm.nationalDex}.png">
-				<img class="pokeball pkb-top" src="resources/img/pkb_top.png">
-				<img class="pokeball pkb-bottom" src="resources/img/pkb_bottom.png">
+				<img class="pokemon" alt="Pokemon image" src="resources/img/pkm/${pkm.nationalDex}.png">
+				<img class="pokeball pkb-top" alt="Pokeball image" src="resources/img/pkb_top.png">
+				<img class="pokeball pkb-bottom" alt="Pokeball image" src="resources/img/pkb_bottom.png">
 			</div>
 		</c:forEach>
 	</div>

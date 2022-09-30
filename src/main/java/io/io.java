@@ -18,8 +18,6 @@ public class io {
      * Récupérer les données des Pokemon du fichier JSON
      * @param fichier chemin du fichier JSON
      * @return un message de confirmation (string)
-     * @throws IOException
-     * @throws ParseException
      */
     public static String migrateJSONtoDB(String fichier) throws IOException, ParseException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(fichier), StandardCharsets.UTF_8));
@@ -61,45 +59,26 @@ public class io {
     }
 
     private static PkmType getTypeAsEnum(String type) {
-        switch (type.toLowerCase(Locale.ROOT)) {
-            case "normal":
-                return PkmType.NORMAL;
-            case "fire":
-                return PkmType.FIRE;
-            case "water":
-                return PkmType.WATER;
-            case "grass":
-                return PkmType.GRASS;
-            case "electric":
-                return PkmType.ELECTRIC;
-            case "ice":
-                return PkmType.ICE;
-            case "fighting":
-                return PkmType.FIGHTING;
-            case "poison":
-                return PkmType.POISON;
-            case "ground":
-                return PkmType.GROUND;
-            case "flying":
-                return PkmType.FLYING;
-            case "psychic":
-                return PkmType.PSYCHIC;
-            case "bug":
-                return PkmType.BUG;
-            case "rock":
-                return PkmType.ROCK;
-            case "ghost":
-                return PkmType.GHOST;
-            case "dark":
-                return PkmType.DARK;
-            case "dragon":
-                return PkmType.DRAGON;
-            case "steel":
-                return PkmType.STEEL;
-            case "fairy":
-                return PkmType.FAIRY;
-            default:
-                return null;
-        }
+        return switch (type.toLowerCase(Locale.ROOT)) {
+            case "normal" -> PkmType.NORMAL;
+            case "fire" -> PkmType.FIRE;
+            case "water" -> PkmType.WATER;
+            case "grass" -> PkmType.GRASS;
+            case "electric" -> PkmType.ELECTRIC;
+            case "ice" -> PkmType.ICE;
+            case "fighting" -> PkmType.FIGHTING;
+            case "poison" -> PkmType.POISON;
+            case "ground" -> PkmType.GROUND;
+            case "flying" -> PkmType.FLYING;
+            case "psychic" -> PkmType.PSYCHIC;
+            case "bug" -> PkmType.BUG;
+            case "rock" -> PkmType.ROCK;
+            case "ghost" -> PkmType.GHOST;
+            case "dark" -> PkmType.DARK;
+            case "dragon" -> PkmType.DRAGON;
+            case "steel" -> PkmType.STEEL;
+            case "fairy" -> PkmType.FAIRY;
+            default -> null;
+        };
     }
 }

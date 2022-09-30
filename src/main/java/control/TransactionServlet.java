@@ -3,7 +3,6 @@ package control;
 import model.Pokemon;
 import org.json.simple.JSONObject;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
@@ -15,7 +14,7 @@ import java.util.List;
 public class TransactionServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         PrintWriter writer = resp.getWriter();
         String pkm = req.getParameter("pkm");
         boolean selected = Boolean.parseBoolean(req.getParameter("sel"));
@@ -63,16 +62,6 @@ public class TransactionServlet extends HttpServlet {
         writer.print(answer.toJSONString());
     }
 
-    @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
-
     private boolean updateTransaction(Pokemon pokemon, HashSet<Pokemon> transactionsAdded, HashSet<Pokemon>  transactionsRemoved, HashSet<Pokemon> team, boolean isRemove) {
         if ((transactionsAdded.size() + team.size() - transactionsRemoved.size()) == 6 && !isRemove) {
             return false;
@@ -101,5 +90,4 @@ public class TransactionServlet extends HttpServlet {
 
         return true;
     }
-
 }

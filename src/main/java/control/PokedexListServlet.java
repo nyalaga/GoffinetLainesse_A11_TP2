@@ -5,7 +5,6 @@ import io.io;
 import model.Pokemon;
 import org.json.simple.parser.ParseException;
 
-import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
@@ -26,7 +25,7 @@ public class PokedexListServlet extends HttpServlet {
 
     // obtenir les données des Pokemon
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         HttpSession session = request.getSession();
 
@@ -36,17 +35,12 @@ public class PokedexListServlet extends HttpServlet {
 
         session.setAttribute("pkmList", pkmList);
 
-        String dest = "";
+        String dest;
         if(pkmList == null || pkmList.isEmpty()) {
             dest = "errorPkmNotFound.jsp";
         } else {
             dest = "pokedex.jsp";
         }
         response.sendRedirect(dest);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

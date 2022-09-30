@@ -50,9 +50,4 @@ public class SavePkmServlet extends HttpServlet {
             response.sendRedirect("PokedexListServlet");
         }
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }
