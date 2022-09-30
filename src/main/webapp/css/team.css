@@ -35,11 +35,11 @@
     0% {margin-top: 0; z-index: 0; clip-path: circle(70px at center)}
     80% {margin-top: 20px; z-index: 0;}
     81% {margin-top: 20px; z-index: 10; scale: 1}
-    100% {margin-top: 30px; z-index: 10; scale: 1.5; clip-path: circle(200px at center)}
+    100% {margin-top: 28px; z-index: 10; scale: 1.5; clip-path: circle(200px at center)}
 }
 
 @keyframes pokeballPokemonClose {
-    0% {margin-top: 30px; z-index: 10; scale: 1.5; clip-path: circle(200px at center)}
+    0% {margin-top: 28px; z-index: 10; scale: 1.5; clip-path: circle(200px at center)}
     19% {margin-top: 20px; z-index: 10; scale: 1}
     20% {margin-top: 20px; z-index: 0}
     100% {margin-top: 0%; clip-path: circle(70px at center)}
