@@ -1,4 +1,4 @@
-package Control;
+package control;
 
 import DAO.PokemonDAO;
 import model.PkmType;
@@ -10,8 +10,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.Locale;
 
-@WebServlet(name = "Servlet_savePkm", value = "/Servlet_savePkm")
-public class Servlet_savePkm extends HttpServlet {
+@WebServlet(name = "SavePkmServlet", value = "/SavePkmServlet")
+public class SavePkmServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récupération des paramètres qui définissent le nouveau Pokemon
@@ -38,7 +38,7 @@ public class Servlet_savePkm extends HttpServlet {
         if (pkm0 != null) { // si un Pokemon avec cet ID existe déjà
             if (request.getParameter("confirm") != null) { // s'il y a eu une confirmation
                 pokemonDAO.update(pkm); //  modifier les attributs du Pokemon existant
-                response.sendRedirect("Servlet_pokedexList");
+                response.sendRedirect("PokedexListServlet");
             } else { // sinon envoyer la demande de confirmation
                 request.setAttribute("pkm", pkm);
                 request.setAttribute("pkm0", pkm0);
@@ -47,7 +47,7 @@ public class Servlet_savePkm extends HttpServlet {
             }
         } else { // s'il n'existe pas de Pokemon avec le même ID
             pokemonDAO.save(pkm);  // enregistrer le Pokemon
-            response.sendRedirect("Servlet_pokedexList");
+            response.sendRedirect("PokedexListServlet");
         }
     }
 

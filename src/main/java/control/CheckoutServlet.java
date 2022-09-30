@@ -1,4 +1,4 @@
-package Control;
+package control;
 
 import model.Pokemon;
 
@@ -11,8 +11,8 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.HashSet;
 
-@WebServlet(name="servlet_checkout", value = "/ServletCheckout")
-public class ServletCheckout extends HttpServlet {
+@WebServlet(name="CheckoutServlet", value = "/CheckoutServlet")
+public class CheckoutServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

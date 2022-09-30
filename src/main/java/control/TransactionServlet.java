@@ -1,4 +1,4 @@
-package Control;
+package control;
 
 import model.Pokemon;
 import org.json.simple.JSONObject;
@@ -11,8 +11,8 @@ import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.List;
 
-@WebServlet(name = "servlet_transaction", value = "/ServletTransaction")
-public class ServletTransaction extends HttpServlet {
+@WebServlet(name = "TransactionServlet", value = "/TransactionServlet")
+public class TransactionServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

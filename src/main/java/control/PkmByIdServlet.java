@@ -1,4 +1,4 @@
-package Control;
+package control;
 
 import DAO.PokemonDAO;
 import model.Pokemon;
@@ -8,8 +8,8 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "Servlet_pkmById", value = "/Servlet_pkmById")
-public class Servlet_pkmById extends HttpServlet {
+@WebServlet(name = "PkmByIdServlet", value = "/PkmByIdServlet")
+public class PkmByIdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récupération de l'id du Pokemon

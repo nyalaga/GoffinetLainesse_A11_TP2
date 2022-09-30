@@ -1,4 +1,4 @@
-package Control;
+package control;
 
 import DAO.PokemonDAO;
 import model.PkmType;
@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-@WebServlet(name = "Servlet_filters", value = "/Servlet_filters")
-public class Servlet_filters extends HttpServlet {
+@WebServlet(name = "FiltersServlet", value = "/FiltersServlet")
+public class FiltersServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String dest;

@@ -1,4 +1,4 @@
-package Control;
+package control;
 
 import DAO.PokemonDAO;
 import io.io;
@@ -11,8 +11,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "Servlet_pokedexList", value = "/Servlet_pokedexList")
-public class Servlet_pokedexList extends HttpServlet {
+@WebServlet(name = "PokedexListServlet", value = "/PokedexListServlet")
+public class PokedexListServlet extends HttpServlet {
 
     // créer de la BD initiale
     public void init() {

@@ -1,17 +1,14 @@
-package Control;
+package control;
 
 import DAO.PokemonDAO;
-import model.PkmType;
-import model.Pokemon;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.Locale;
 
-@WebServlet(name = "Servlet_deletePkm", value = "/Servlet_deletePkm")
-public class Servlet_deletePkm extends HttpServlet {
+@WebServlet(name = "DeletePkmServlet", value = "/DeletePkmServlet")
+public class DeletePkmServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -20,7 +17,7 @@ public class Servlet_deletePkm extends HttpServlet {
         PokemonDAO pokemonDAO = new PokemonDAO();
         pokemonDAO.delete(nationalDex);
 
-        response.sendRedirect("Servlet_pokedexList");
+        response.sendRedirect("PokedexListServlet");
     }
 
     @Override

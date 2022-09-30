@@ -1,12 +1,12 @@
-package Control;
+package control;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "Servlet_i18n", value = "/Servlet_i18n")
-public class Servlet_i18n extends HttpServlet {
+@WebServlet(name = "I18nServlet", value = "/I18nServlet")
+public class I18nServlet extends HttpServlet {
 
     // changer de langue
     @Override

@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=500px, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="webjars/bootstrap/5.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/team.css">
 	<title>My Team</title>
@@ -33,6 +33,6 @@
 </body>
 <footer>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
 <script src="script/team.js"></script>
 </html>
