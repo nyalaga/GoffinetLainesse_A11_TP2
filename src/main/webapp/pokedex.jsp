@@ -21,7 +21,7 @@
 	<h1 class="page-name"><fmt:message key="title.pokedex"/></h1>
 
 	<div class="mt-2">
-		<form action="Servlet_filters" method="get">
+		<form action="FiltersServlet" method="get">
 			<label class="fst-italic" for="partialName"><fmt:message key="search.name"/>  </label>
 			<input class="m-1" type="text" id="partialName" name="partialName">
 			<input class="btn btn-outline-dark btn-sm" type="submit" value="<fmt:message key="search"/>">
@@ -29,7 +29,7 @@
 	</div>
 
 	<div class="mt-2">
-		<form action="Servlet_filters" method="get">
+		<form action="FiltersServlet" method="get">
 			<label class="m-1 fst-italic" for="typeChoice"><fmt:message key="search.type"/>  </label>
 			<select class="btn btn-outline-dark" id="typeChoice" name="typeChoice" onchange="this.form.submit()">
 				<option selected disabled><fmt:message key="type"/></option>
@@ -56,7 +56,7 @@
 	</div>
 
 	<div class="mt-2">
-		<form class="row" action="Servlet_filters" method="get">
+		<form class="row" action="FiltersServlet" method="get">
 			<label class="col-auto fst-italic" for="heightChoice"><fmt:message key="search.height"/>  </label>
 			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_m()">
 			<input class="col-auto" type="range" id="heightChoice" name="heightChoice" min="0" max="15" oninput="this.nextElementSibling.value">
@@ -70,7 +70,7 @@
 	</div>
 
 	<div class="mt-2">
-		<form class="row" action="Servlet_filters" method="get">
+		<form class="row" action="FiltersServlet" method="get">
 			<label class="col-auto fst-italic" for="weightChoice"><fmt:message key="search.weight"/>  </label>
 			<input class="col-auto btn btn-dark btn-sm rounded-pill" type="button" value="-" onclick="subtract_one_kg()">
 			<input class="col-auto" type="range" id="weightChoice" name="weightChoice" min="0" max="1400" oninput="this.nextElementSibling.value">

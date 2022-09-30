@@ -20,7 +20,7 @@
 	<%@include file="components/navigation_menu.jsp"%>
 	<h1 class="page-name"><fmt:message key="data.update"/></h1>
 
-	<form class="fst-italic" action="Servlet_pkmById" method="get">
+	<form class="fst-italic" action="PkmByIdServlet" method="get">
 		<div class="row border border-2 border-danger rounded m-2 p-3">
 			<label class="col-auto" for="searchNatId"><fmt:message key="card.natID"/></label>
 			<input class="col-auto" type="text" id="searchNatId" name="searchNatId" value="${pkm.nationalDex}"/>

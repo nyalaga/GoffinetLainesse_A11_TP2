@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=500px, initial-scale=1">
     <link rel="stylesheet" href="webjars/bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>404</title>
+    <title>500</title>
 </head>
 <body class="main-container">
 

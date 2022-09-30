@@ -20,6 +20,6 @@
 <div class="row justify-content-md-center w-75">
     <img src="resources/img/missingno.jpg" alt="MISSINGNO">
 </div>
-<a class="btn-menu p-2 m-3 text-decoration-none fw-bold" href="Servlet_pokedexList"><fmt:message key="title.pokedex"/></a>
+<a class="btn-menu p-2 m-3 text-decoration-none fw-bold" href="PokedexListServlet"><fmt:message key="title.pokedex"/></a>
 </body>
 </html>

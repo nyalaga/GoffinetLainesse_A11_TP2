@@ -25,7 +25,7 @@
 		<c:if test="${not empty pkm}"><fmt:message key="data.update"/></c:if>
 	</h1>
 
-	<form class="fst-italic" action="Servlet_savePkm" method="get">
+	<form class="fst-italic" action="SavePkmServlet" method="get">
 		<fieldset <c:if test="${not empty pkm0}">disabled="disabled"</c:if>>
 			<div class="row m-3 fst-normal fw-bold">
 				<c:if test="${empty pkm}"><fmt:message key="data.addSentence"/></c:if>
@@ -231,7 +231,7 @@
 			</div>
 			<div class="row m-4 justify-content-evenly">
 				<input class="col-auto btn btn-dark btn-sm" type="submit" value="<fmt:message key="data.confirm"/>">
-				<a class="col-auto btn btn-dark btn-sm" type="button" href="Servlet_pokedexList">
+				<a class="col-auto btn btn-dark btn-sm" type="button" href="PokedexListServletokedexList">
 					<fmt:message key="data.cancel"/>
 				</a>
 			</div>
@@ -294,7 +294,7 @@
 				</div>
 			</div>
 
-			<form action="Servlet_savePkm" method="get">
+			<form action="SavePkmServlet" method="get">
 				<div class="row m-3 fst-normal fw-bold"><fmt:message key="data.updateConfirm"/> ?</div>
 				<div class="row m-4 justify-content-evenly">
 					<input type="hidden" name="confirm" value="y">
@@ -307,7 +307,7 @@
 					<input type="hidden" name="type1" value="${pkm.primaryType}">
 					<input type="hidden" name="type2" value="${pkm.secondaryType}">
 					<input class="col-auto btn btn-dark btn-sm" type="submit" value="<fmt:message key="data.yes"/>">
-					<a class="col-auto btn btn-dark btn-sm" type="button" href="Servlet_pokedexList">
+					<a class="col-auto btn btn-dark btn-sm" type="button" href="PokedexListServletokedexList">
 						<fmt:message key="data.no"/>
 					</a>
 				</div>

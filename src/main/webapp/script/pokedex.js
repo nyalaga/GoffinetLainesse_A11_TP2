@@ -23,7 +23,7 @@ for (const card of pokedexCards) {
             let classes = card.classList
             let pkm = card.querySelector("[name=pkm-name]")
             console.log(pkm.textContent.trim())
-                $.get("ServletTransaction?pkm=" + pkm.textContent.trim() + "&sel=" + classes.contains("selected")).done(function (data) {
+                $.get("TransactionServlet?pkm=" + pkm.textContent.trim() + "&sel=" + classes.contains("selected")).done(function (data) {
                     console.log(data, typeof data)
                     const answer = JSON.parse(data);
                     console.log(answer, typeof answer)

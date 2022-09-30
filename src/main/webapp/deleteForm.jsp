@@ -22,7 +22,7 @@
 	<%@include file="components/navigation_menu.jsp"%>
 	<h1 class="page-name"><fmt:message key="data.delete"/></h1>
 
-	<form class="fst-italic" action="Servlet_pkmById" method="get">
+	<form class="fst-italic" action="PkmByIdServlet" method="get">
 		<div class="row border border-2 border-danger rounded m-2 p-3">
 			<label class="col-auto" for="searchNatId"><fmt:message key="card.natID"/></label>
 			<input class="col-auto" type="text" id="searchNatId" name="searchNatId" value="${pkm.nationalDex}"/>
@@ -84,14 +84,14 @@
 				</div>
 			</div>
 
-			<form class="fst-italic" action="Servlet_deletePkm" method="get">
+			<form class="fst-italic" action="DeletePkmServlet" method="get">
 				<div class="row m-3 fst-normal fw-bold">
 					<fmt:message key="data.deleteSentence"/> ${pkm.name} ?
 				</div>
 				<div class="row m-4 justify-content-evenly">
 					<input type="hidden" name="pkm-natDex" value="${pkm.nationalDex}">
 					<input class="col-auto btn btn-dark btn-sm" type="submit" value="<fmt:message key="data.yes"/>">
-					<a class="col-auto btn btn-dark btn-sm" type="button" href="Servlet_pokedexList">
+					<a class="col-auto btn btn-dark btn-sm" type="button" href="PokedexListServletokedexList">
 						<fmt:message key="data.no"/>
 					</a>
 				</div>

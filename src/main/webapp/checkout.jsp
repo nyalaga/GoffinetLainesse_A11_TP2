@@ -37,7 +37,7 @@
 			</ul>
 		</div>
 		<div>
-			<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}/ServletCheckout">Confirm</a>
+			<a class="btn btn-outline-danger btn-menu" href="${pageContext.request.contextPath}/CheckoutServlet">Confirm</a>
 		</div>
 	</div>
 </body>
