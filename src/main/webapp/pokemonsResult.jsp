@@ -19,7 +19,7 @@
 
 <div class="main-container">
     <%@include file="components/navigation_menu.jsp"%>
-    <h1 class="page-name"><fmt:message key="title.pokedex"/></h1>
+    <h1 class="page-name"><fmt:message key="title.result"/></h1>
     <%@include file="components/pokedex_card.jsp"%>
 </div>
 <footer>

@@ -17,7 +17,7 @@ public class FiltersServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String dest;
-
+        HttpSession session = request.getSession();
         PokemonDAO pokemonDAO = new PokemonDAO();
         List<Pokemon> pkmList = null;
         List<String> parameterNames = new ArrayList<>(request.getParameterMap().keySet());
@@ -44,7 +44,7 @@ public class FiltersServlet extends HttpServlet {
             }
         }
 
-        request.setAttribute("pkmList", pkmList);
+        session.setAttribute("pkmList", pkmList);
 
         if(pkmList == null || pkmList.isEmpty()) {
             dest = "/errorPkmNotFound.jsp";

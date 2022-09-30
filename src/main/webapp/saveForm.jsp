@@ -80,7 +80,7 @@
 						<fmt:message key="type.normal"/>
 					</option>
 					<option class="FIREColor" value="fire"
-							<c:if test="${pkm.primaryType == PkmType.NORMAL}">selected</c:if>>
+							<c:if test="${pkm.primaryType == PkmType.FIRE}">selected</c:if>>
 						<fmt:message key="type.fire"/>
 					</option>
 					<option class="WATERColor" value="water"
@@ -157,7 +157,7 @@
 						<fmt:message key="type.normal"/>
 					</option>
 					<option class="FIREColor" value="fire"
-							<c:if test="${pkm.secondaryType == PkmType.NORMAL}">selected</c:if>>
+							<c:if test="${pkm.secondaryType == PkmType.FIRE}">selected</c:if>>
 						<fmt:message key="type.fire"/>
 					</option>
 					<option class="WATERColor" value="water"
