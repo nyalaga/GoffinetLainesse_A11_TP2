@@ -31,7 +31,7 @@
 				<c:forEach var="pkm" items="${sessionScope.transactionsRemoved}">
 					<li>
 						<span>Removing from your team: ${pkm.name}</span>
-						<span><img src="resources/img/pkm/${pkm.nationalDex}.png"></span>
+						<span><img class="pkm-img-checkout" src="resources/img/pkm/${pkm.nationalDex}.png"></span>
 					</li>
 				</c:forEach>
 			</ul>

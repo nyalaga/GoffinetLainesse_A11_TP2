@@ -23,7 +23,7 @@
 	<div class="team team-row col-12">
 		<c:forEach var="pkm" items="${sessionScope.team}">
 			<div class="team-pokeball">
-				<img class="pokemon" src="resources/img/${pkm.nationalDex}.png">
+				<img class="pokemon" src="resources/img/pkm/${pkm.nationalDex}.png">
 				<img class="pokeball pkb-top" src="resources/img/pkb_top.png">
 				<img class="pokeball pkb-bottom" src="resources/img/pkb_bottom.png">
 			</div>

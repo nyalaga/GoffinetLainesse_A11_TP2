@@ -149,3 +149,8 @@ h1 {
 .checkoutZone {
     margin-top: 50px;
 }
+
+.pkm-img-checkout {
+    height: 100px;
+    width: auto;
+}

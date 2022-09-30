@@ -22,26 +22,26 @@
 }
 
 @keyframes pokeballBottomOpen {
-    0% {margin-top: 7%}
-    100% {margin-top: 12%}
+    0% {margin-top: 80px}
+    100% {margin-top: 120px}
 }
 
 @keyframes pokeballBottomClose {
-    0% {margin-top: 12%}
-    100% {margin-top: 7%}
+    0% {margin-top: 120px}
+    100% {margin-top: 80px}
 }
 
 @keyframes pokeballPokemonOpen {
-    0% {margin-top: 0%; z-index: 0; clip-path: circle(70px at center)}
-    80% {margin-top: 16%; z-index: 0;}
-    81% {margin-top: 16%; z-index: 10; scale: 1}
-    100% {margin-top: 20%; z-index: 10; scale: 1.5; clip-path: circle(200px at center)}
+    0% {margin-top: 0; z-index: 0; clip-path: circle(70px at center)}
+    80% {margin-top: 20px; z-index: 0;}
+    81% {margin-top: 20px; z-index: 10; scale: 1}
+    100% {margin-top: 30px; z-index: 10; scale: 1.5; clip-path: circle(200px at center)}
 }
 
 @keyframes pokeballPokemonClose {
-    0% {margin-top: 20%; z-index: 10; scale: 1.5; clip-path: circle(200px at center)}
-    19% {margin-top: 16%; z-index: 10; scale: 1}
-    20% {margin-top: 16%; z-index: 0}
+    0% {margin-top: 30px; z-index: 10; scale: 1.5; clip-path: circle(200px at center)}
+    19% {margin-top: 20px; z-index: 10; scale: 1}
+    20% {margin-top: 20px; z-index: 0}
     100% {margin-top: 0%; clip-path: circle(70px at center)}
 }
 
@@ -92,7 +92,7 @@
 
 .pkb-bottom {
     width: 200px;
-    margin-top: 7%;
+    margin-top: 80px;
     position: absolute;
     z-index: 1;
 }
@@ -117,7 +117,7 @@
 
 .pokemon {
     width: 200px;
-    padding: 10%;
+    padding: 20px;
     position: absolute;
     z-index: 0;
     clip-path: circle(70px at center);

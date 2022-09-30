@@ -23,8 +23,8 @@
         "Grass"
       ],
       "desc": "When it is drumming out rapid beats in battle, it gets so caught up in the rhythm that it won't even notice that it's already knocked out its opponent.",
-      "std_img": "/fake_std_url.html",
-      "shiny_img": "/fake_shiny_url.html"
+      "std_img": "https://www.serebii.net/swordshield/pokemon/811.png",
+      "shiny_img": "https://www.serebii.net/Shiny/SWSH/811.png"
     },
 	{
       "national_dex": 812,
